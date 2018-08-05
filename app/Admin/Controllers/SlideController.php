@@ -3,7 +3,10 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Slide;
+use App\Models\Category;
+use Encore\Admin\Tree;
 
+use Image;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -24,8 +27,8 @@ class SlideController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮换图管理');
+            $content->description('轮换图列表');
 
             $content->body($this->grid());
         });
@@ -41,8 +44,8 @@ class SlideController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮换图管理');
+            $content->description('轮换图编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +60,8 @@ class SlideController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('轮换图管理');
+            $content->description('轮换图创建');
 
             $content->body($this->form());
         });
@@ -74,12 +77,17 @@ class SlideController extends Controller
         return Admin::grid(Slide::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->img('图片');
-            $grid->cate_id('所属分类');
-            
+            //$grid->img('图片');
+            $grid->img('图片')->image('', 50, 50);
 
-            $grid->created_at('创建时间');
-            $grid->updated_at('更新时间');
+            // $grid->select('parent_id')->options(Category::all()->pluck('name', 'id'));
+            $grid->parent_id('所属栏目')->options(Category::selectOptions());
+            $grid->name('图片名称');
+            //$grid->description('图片描述');
+            //$grid->link('图片链接');
+
+            //$grid->created_at();
+            //$grid->updated_at();
         });
     }
 
@@ -93,6 +101,13 @@ class SlideController extends Controller
         return Admin::form(Slide::class, function (Form $form) {
 
             $form->display('id', 'ID');
+           
+            $form->select('parent_id', '所属栏目')->options(Category::selectOptions());
+            $form->image('img', '图片上传');
+
+            $form->text('name', '图片标题');
+            $form->text('description', '图片描述');
+            $form->text('link', '图片链接');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

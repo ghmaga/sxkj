@@ -63,6 +63,27 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'admin' => [
+        'driver' => 'local',
+        'root' => public_path('uploads'),
+        'visibility' => 'public',
+        'url' => env('APP_URL').'/uploads',
+        ],
+
+        'qiniu' => [
+        'driver'  => 'qiniu',
+        'domains' => [
+            'default'   => 'pcx1schgh.bkt.clouddn.com', //你的七牛域名
+            'https'     => '',         //你的HTTPS域名
+            'custom'    => 'pcx1schgh.bkt.clouddn.com',                //你的自定义域名
+         ],
+        'access_key'=> '7exdci4A8kl_uh-rzr0KNn8gIyHFOACXsBilEXDU',  //AccessKey
+        'secret_key'=> '4OhE5gE7pYi-1cCm58xSOSEEVLnb7Fqh0g5ZYegn',  //SecretKey
+        'bucket'    => 'liyli',  //Bucket名字
+        'notify_url'=> '',  //持久化处理回调地址
+        'url'       => 'http://pcx1schgh.bkt.clouddn.com/',  // 填写文件访问根url
+        ],
+
     ],
 
 ];

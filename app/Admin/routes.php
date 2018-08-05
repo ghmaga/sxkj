@@ -11,7 +11,9 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    $router->resource('category', 'CategoryController');
     $router->resource('product', 'ProductController');
     $router->resource('slide', 'SlideController');
+
 
 });

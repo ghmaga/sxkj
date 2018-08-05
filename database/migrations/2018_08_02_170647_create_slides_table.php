@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidesTables extends Migration
+class CreateSlidesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class CreateSlidesTables extends Migration
     {
         Schema::create('slides', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('parent_id')->unsigned()->nullable();
-            $table->string('name', 50)->comment('名称');
-            $table->string('description')->nullable()->comment('描述');
+            $table->integer('parent_id')->comment('父级ID');
             $table->string('img')->comment('图片路径');
-            $table->string('link')->comment('链接');            
+            $table->string('name')->comment('图片名称');
+            $table->string('description')->comment('描述');
+            $table->string('link')->comment('图片链接');
             $table->timestamps();
         });
     }
