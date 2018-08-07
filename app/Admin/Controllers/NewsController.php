@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Product;
+use App\Models\News;
 use App\Models\Category;
 
 use Encore\Admin\Form;
@@ -12,7 +12,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class ProductController extends Controller
+class NewsController extends Controller
 {
     use ModelForm;
 
@@ -25,8 +25,8 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('产品列表');
-            $content->description('');
+            $content->header('新闻管理');
+            $content->description('description');
 
             $content->body($this->grid());
         });
@@ -42,7 +42,7 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
+            $content->header('编辑');
             $content->description('description');
 
             $content->body($this->form()->edit($id));
@@ -58,7 +58,7 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('创建产品  ');
+            $content->header('新建');
             $content->description('description');
 
             $content->body($this->form());
@@ -72,11 +72,11 @@ class ProductController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Product::class, function (Grid $grid) {
+        return Admin::grid(News::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->title('产品名称');
-
+            $grid->title('标题');
+            $grid->imgage('图片')->image('', 50, 50);
             $grid->created_at();
             $grid->updated_at();
         });
@@ -89,27 +89,20 @@ class ProductController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Product::class, function (Form $form) {
+        return Admin::form(News::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('title', '产品名称');
-            $form->text('en_title', '英文产品名称');
-            $form->image('image', '封面图片');
-            $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
-            $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
-            $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->text('title', '特征名称');
-                $form->text('en_title', '英文特征名称');
-                $form->text('description', '特征描述');
-                $form->text('en_description', '英文特征描述');
-            });
-            $form->file('file', '文件上传');
-            $form->file('video', '视频上传');
 
-            $form->editor('body', '产品描述');
-            $form->editor('en_body', '英文产品描述');
-            //$form->editor('description', '商品描述')->rules('required');
-            $form->text('order', '排序');
+            $form->text('title', '标题');
+            $form->select('cate_id', '产品分类')->options(Category::where(['parent_id' => 3])->pluck('name'));
+            $form->image('image', '封面图片');
+           
+            $form->editor('body', '新闻内容');
+            $form->editor('en_body', '英文新闻内容');
+            $form->editor('description', '新闻简介');
+            $form->editor('en_description', '英文新闻简介');
+            $form->display('created_at', 'Created At');
+            $form->display('updated_at', 'Updated At');
         });
     }
 }

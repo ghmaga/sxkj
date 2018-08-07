@@ -14,6 +14,6 @@ Route::group([
     $router->resource('category', 'CategoryController');
     $router->resource('product', 'ProductController');
     $router->resource('slide', 'SlideController');
-
-
+	$router->resource('brands', 'BrandController');
+	$router->resource('news', 'NewsController');
 });

@@ -80,8 +80,7 @@ class SlideController extends Controller
             //$grid->img('图片');
             $grid->img('图片')->image('', 50, 50);
 
-            // $grid->select('parent_id')->options(Category::all()->pluck('name', 'id'));
-            $grid->parent_id('所属栏目')->options(Category::selectOptions());
+            //$grid->parent_id('所属栏目')->options(Category::selectOptions());
             $grid->name('图片名称');
             //$grid->description('图片描述');
             //$grid->link('图片链接');
@@ -91,6 +90,13 @@ class SlideController extends Controller
         });
     }
 
+    protected function treeView()
+    {
+        return Category::tree(function (Tree $tree) {
+            $tree->disableCreate();
+            return $tree;
+        });
+    }
     /**
      * Make a form builder.
      *
@@ -102,15 +108,15 @@ class SlideController extends Controller
 
             $form->display('id', 'ID');
            
-            $form->select('parent_id', '所属栏目')->options(Category::selectOptions());
+            $form->select('parent_id', '所属栏目')->options(Category::where(['parent_id' => 1])->pluck('name'));
             $form->image('img', '图片上传');
 
             $form->text('name', '图片标题');
+            $form->text('en_name', '英文图片标题');
             $form->text('description', '图片描述');
+            $form->text('en_description', '英文图片描述');
             $form->text('link', '图片链接');
-
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            // $form->tags('keywords');
         });
     }
 }

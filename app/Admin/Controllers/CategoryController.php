@@ -46,7 +46,9 @@ class CategoryController extends Controller
 
                     $form->select('parent_id','父类名称')->options(Category::selectOptions());
                     $form->text('name','类型名称');
+                    $form->text('en_name','英文类型名称');
                     $form->textarea('description','类型描述信息');
+                    $form->textarea('en_description','英文类型描述信息');
                     $form->number('order','排序序号');
                     
                     
@@ -117,7 +119,9 @@ class CategoryController extends Controller
             $form->display('id', 'ID');
 
             $form->text('name','类型名称');
+            $form->text('en_name','类型名称');
             $form->textarea('description','类型描述信息');
+            $form->textarea('en_description','类型描述信息');
             $form->number('order','排序序号');
             $form->select('parent_id','父类名称')->options(Category::selectOptions());
 
