@@ -45,10 +45,10 @@ class CategoryController extends Controller
                     $form->action(admin_base_path('category'));
 
                     $form->select('parent_id','父类名称')->options(Category::selectOptions());
-                    $form->text('name','类型名称');
-                    $form->text('en_name','英文类型名称');
-                    $form->textarea('description','类型描述信息');
-                    $form->textarea('en_description','英文类型描述信息');
+                    $form->text('name','类型名称')->rules('required|min:3');
+                    $form->text('en_name','英文类型名称')->rules('required')->rules('required');
+                    $form->textarea('description','类型描述信息')->rules('required');
+                    $form->textarea('en_description','英文类型描述信息')->rules('required');
                     $form->number('order','排序序号');
                     
                     

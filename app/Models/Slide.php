@@ -8,7 +8,7 @@ class Slide extends Model
 {
 	//protected $table = 'slides';
 
-    protected $fillable = ['name', 'description', 'img', 'parent_id', 'link'];
+    protected $fillable = ['name', 'description', 'image', 'parent_id', 'link'];
 
     public function __construct()
     {

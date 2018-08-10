@@ -91,7 +91,7 @@ class BrandController extends Controller
 
             $form->display('id', 'ID');
             $form->select('cate_id', '厂牌关联')->options(Category::where(['parent_id' => 13])->pluck('name'));
-            $form->image('image', '厂牌Logo');
+            $form->image('image', '厂牌Logo')->rules('required|image');
             $form->text('order', '排序');
 
             $form->display('created_at', 'Created At');

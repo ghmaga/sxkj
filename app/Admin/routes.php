@@ -16,4 +16,6 @@ Route::group([
     $router->resource('slide', 'SlideController');
 	$router->resource('brands', 'BrandController');
 	$router->resource('news', 'NewsController');
+	$router->resource('about', 'AboutController');
+	$router->resource('job', 'JobController');
 });

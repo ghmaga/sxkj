@@ -93,14 +93,14 @@ class NewsController extends Controller
 
             $form->display('id', 'ID');
 
-            $form->text('title', '标题');
+            $form->text('title', '标题')->rules('required');
             $form->select('cate_id', '产品分类')->options(Category::where(['parent_id' => 3])->pluck('name'));
-            $form->image('image', '封面图片');
+            $form->image('image', '封面图片')->rules('required|image');
            
-            $form->editor('body', '新闻内容');
-            $form->editor('en_body', '英文新闻内容');
-            $form->editor('description', '新闻简介');
-            $form->editor('en_description', '英文新闻简介');
+            $form->editor('body', '新闻内容')->rules('required');
+            $form->editor('en_body', '英文新闻内容')->rules('required');
+            $form->editor('description', '新闻简介')->rules('required');
+            $form->editor('en_description', '英文新闻简介')->rules('required');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });

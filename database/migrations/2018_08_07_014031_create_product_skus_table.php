@@ -21,6 +21,7 @@ class CreateProductSkusTable extends Migration
             $table->text('description')->nullable();
             $table->text('en_description')->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->integer('order')->unsigned();
             $table->timestamps();
         });
     }
