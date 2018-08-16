@@ -8,5 +8,5 @@ class Brand extends Model
 {
 	protected $table = 'brands';
 
-    protected $fillable = ['cate_id', 'image', 'order'];
+    protected $fillable = ['cate_id', 'image', 'order' ,'description'];
 }

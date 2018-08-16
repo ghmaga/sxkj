@@ -94,17 +94,22 @@ class ProductController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '产品名称')->rules('required');
             $form->text('en_title', '英文产品名称')->rules('required');
-            $form->image('image', '封面图片')->crop(300, 300, [100,100])->rules('required');
+            $form->image('image', '封面图片')->rules('required|image');
             $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
+                $form->image('image', '特征图片')->rules('image');
                 $form->text('title', '特征名称')->rules('required');
                 $form->text('en_title', '英文特征名称')->rules('required');
                 $form->text('description', '特征描述')->rules('required');
                 $form->text('en_description', '英文特征描述')->rules('required');
             });
-            $form->file('file', '文件上传')->rules('mimes:doc,docx,xlsx');
-            $form->file('video', '视频上传')->rules('mimes:mp4.avi.rmvb');
+            // $form->multipleFile('file', '文件上传')->removable()->rules('mimes:doc,docx,xlsx,wps');
+            // $form->multipleFile('video', '视频上传')->removable()->rules('mimes:mp4.avi.rmvb');
+
+            $form->multipleFile('file', '文件上传')->removable();
+            $form->multipleFile('video', '视频上传')->removable();
+
 
             $form->editor('body', '产品描述')->rules('required');
             $form->editor('en_body', '英文产品描述')->rules('required');

@@ -8,5 +8,5 @@ class Job extends Model
 {
 	protected $table = 'jobs';
 
-    protected $fillable = ['title', 'en_title', 'body', 'en_body'];
+    protected $fillable = ['title', 'en_title', 'body', 'en_body', 'oder'];
 }

@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $fillable = ['name','description','order','parent_id'];
+    protected $fillable = ['name', 'en_name', 'description', 'en_description', 'order', 'parent_id'];
 
     public function __construct(array $attributes = [])
     {

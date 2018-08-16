@@ -8,5 +8,5 @@ class About extends Model
 {
 	protected $table = 'abouts';
 
-    protected $fillable = ['title', 'en_title', 'image', 'body', 'en_body'];
+    protected $fillable = ['title', 'en_title', 'image', 'body', 'en_body', 'order'];
 }
