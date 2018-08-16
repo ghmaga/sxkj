@@ -108,12 +108,12 @@ class ProductController extends Controller
 
             $form->editor('body', '产品描述')->rules('required');
             $form->editor('en_body', '英文产品描述')->rules('required');
-            // $states = [
-            //     'on'  => ['value' => 1, 'text' => '打开', 'color' => 'success'],
-            //     'off' => ['value' => 0, 'text' => '关闭', 'color' => 'danger'],
-            // ];
+            $states = [
+                'on'  => ['value' => 1, 'text' => '打开', 'color' => 'success'],
+                'off' => ['value' => 0, 'text' => '关闭', 'color' => 'danger'],
+            ];
 
-            // $form->switch('push', '推荐')->states($states);
+            $form->switch('push', '推荐')->states($states);
             //$form->editor('description', '商品描述')->rules('required');
             $form->text('order', '排序');
         });

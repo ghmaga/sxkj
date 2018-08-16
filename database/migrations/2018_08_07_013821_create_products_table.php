@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('video')->comment('视频')->nullable();
             $table->text('body')->comment('描述')->nullable();
             $table->text('en_body')->comment('英文描述')->nullable();
+            $table->unsignedInteger('push')->comment('产品推荐');
             $table->timestamps();
         });
     }
