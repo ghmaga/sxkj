@@ -18,4 +18,6 @@ Route::group([
 	$router->resource('news', 'NewsController');
 	$router->resource('about', 'AboutController');
 	$router->resource('job', 'JobController');
+    //图片上传
+    $router->post('upload', 'UploadController@uploadImg');
 });

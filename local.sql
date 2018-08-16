@@ -11,12 +11,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- 导出 ladmin 的数据库结构
-DROP DATABASE IF EXISTS `ladmin`;
-CREATE DATABASE IF NOT EXISTS `ladmin` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
-USE `ladmin`;
-
 -- 导出  表 ladmin.abouts 结构
 DROP TABLE IF EXISTS `abouts`;
 CREATE TABLE IF NOT EXISTS `abouts` (
@@ -112,9 +106,9 @@ CREATE TABLE IF NOT EXISTS `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1035 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1049 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 正在导出表  ladmin.admin_operation_log 的数据：~1,034 rows (大约)
+-- 正在导出表  ladmin.admin_operation_log 的数据：~1,048 rows (大约)
 DELETE FROM `admin_operation_log`;
 /*!40000 ALTER TABLE `admin_operation_log` DISABLE KEYS */;
 INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `input`, `created_at`, `updated_at`) VALUES
@@ -1151,7 +1145,21 @@ INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `inp
 	(1031, 1, 'admin/config', 'GET', '192.168.10.1', '[]', '2018-08-08 12:21:32', '2018-08-08 12:21:32'),
 	(1032, 1, 'admin/config/1/edit', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-08 12:21:46', '2018-08-08 12:21:46'),
 	(1033, 1, 'admin/config/1', 'PUT', '192.168.10.1', '{"name":"\\u554a\\u5b9e\\u6253\\u5b9e","value":"1","description":"1","_token":"miwUs0d2CTjqJ4pjymwgFaNyKZmWLoCQi6BTp0QB","_method":"PUT","_previous_":"http:\\/\\/ladmin.test\\/admin\\/config"}', '2018-08-08 12:21:49', '2018-08-08 12:21:49'),
-	(1034, 1, 'admin/config', 'GET', '192.168.10.1', '[]', '2018-08-08 12:21:50', '2018-08-08 12:21:50');
+	(1034, 1, 'admin/config', 'GET', '192.168.10.1', '[]', '2018-08-08 12:21:50', '2018-08-08 12:21:50'),
+	(1035, 1, 'admin', 'GET', '192.168.10.1', '[]', '2018-08-13 02:25:47', '2018-08-13 02:25:47'),
+	(1036, 1, 'admin/media', 'GET', '192.168.10.1', '[]', '2018-08-13 07:26:39', '2018-08-13 07:26:39'),
+	(1037, 1, 'admin/brands', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:26:48', '2018-08-13 07:26:48'),
+	(1038, 1, 'admin/brands/create', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:26:51', '2018-08-13 07:26:51'),
+	(1039, 1, 'admin/category', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:27:16', '2018-08-13 07:27:16'),
+	(1040, 1, 'admin/product', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:28:05', '2018-08-13 07:28:05'),
+	(1041, 1, 'admin/product/create', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:28:07', '2018-08-13 07:28:07'),
+	(1042, 1, 'admin/product', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:29:26', '2018-08-13 07:29:26'),
+	(1043, 1, 'admin/product/2/edit', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:29:29', '2018-08-13 07:29:29'),
+	(1044, 1, 'admin/product', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:29:44', '2018-08-13 07:29:44'),
+	(1045, 1, 'admin/product/create', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:33:06', '2018-08-13 07:33:06'),
+	(1046, 1, 'admin/brands', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:33:29', '2018-08-13 07:33:29'),
+	(1047, 1, 'admin/brands/create', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:33:31', '2018-08-13 07:33:31'),
+	(1048, 1, 'admin', 'GET', '192.168.10.1', '{"_pjax":"#pjax-container"}', '2018-08-13 07:36:59', '2018-08-13 07:36:59');
 /*!40000 ALTER TABLE `admin_operation_log` ENABLE KEYS */;
 
 -- 导出  表 ladmin.admin_permissions 结构
@@ -1294,6 +1302,7 @@ DELETE FROM `admin_user_permissions`;
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE IF NOT EXISTS `brands` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `cate_id` int(10) unsigned NOT NULL COMMENT '关联厂牌分类id',
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `order` int(11) DEFAULT NULL,
@@ -1305,8 +1314,8 @@ CREATE TABLE IF NOT EXISTS `brands` (
 -- 正在导出表  ladmin.brands 的数据：~1 rows (大约)
 DELETE FROM `brands`;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` (`id`, `cate_id`, `image`, `order`, `created_at`, `updated_at`) VALUES
-	(1, 2, 'images/5c238383b54f22f061ea7b36a09982b2.jpg', 1, '2018-08-07 11:39:36', '2018-08-07 11:40:10');
+INSERT INTO `brands` (`id`, `description`, `cate_id`, `image`, `order`, `created_at`, `updated_at`) VALUES
+	(1, NULL, 2, 'images/5c238383b54f22f061ea7b36a09982b2.jpg', 1, '2018-08-07 11:39:36', '2018-08-07 11:40:10');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 
 -- 导出  表 ladmin.categories 结构
@@ -1464,6 +1473,7 @@ INSERT INTO `products` (`id`, `title`, `en_title`, `image`, `parent_id`, `brand_
 DROP TABLE IF EXISTS `product_skus`;
 CREATE TABLE IF NOT EXISTS `product_skus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `en_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `product_id` int(10) unsigned NOT NULL,
@@ -1479,14 +1489,14 @@ CREATE TABLE IF NOT EXISTS `product_skus` (
 -- 正在导出表  ladmin.product_skus 的数据：~7 rows (大约)
 DELETE FROM `product_skus`;
 /*!40000 ALTER TABLE `product_skus` DISABLE KEYS */;
-INSERT INTO `product_skus` (`id`, `title`, `en_title`, `product_id`, `description`, `en_description`, `created_at`, `updated_at`) VALUES
-	(1, '222222222222', '', 2, '特征描述1', NULL, '2018-08-07 03:53:56', '2018-08-07 03:56:09'),
-	(2, '222222222222', '', 2, '特征描述2', NULL, '2018-08-07 03:53:56', '2018-08-07 03:56:09'),
-	(3, '222222222222', '', 2, '特征名称3', NULL, '2018-08-07 03:56:09', '2018-08-07 03:56:09'),
-	(4, '111', '', 3, '111', NULL, '2018-08-07 07:38:26', '2018-08-07 07:39:16'),
-	(5, '2222', '', 3, '222', NULL, '2018-08-07 07:38:26', '2018-08-07 07:39:16'),
-	(7, '11111111111111111', NULL, 7, '1', NULL, '2018-08-08 04:01:41', '2018-08-08 04:01:41'),
-	(8, '11111111111111111', NULL, 7, NULL, NULL, '2018-08-08 04:01:41', '2018-08-08 04:01:41');
+INSERT INTO `product_skus` (`id`, `image`, `title`, `en_title`, `product_id`, `description`, `en_description`, `created_at`, `updated_at`) VALUES
+	(1, '', '222222222222', '', 2, '特征描述1', NULL, '2018-08-07 03:53:56', '2018-08-07 03:56:09'),
+	(2, '', '222222222222', '', 2, '特征描述2', NULL, '2018-08-07 03:53:56', '2018-08-07 03:56:09'),
+	(3, '', '222222222222', '', 2, '特征名称3', NULL, '2018-08-07 03:56:09', '2018-08-07 03:56:09'),
+	(4, '', '111', '', 3, '111', NULL, '2018-08-07 07:38:26', '2018-08-07 07:39:16'),
+	(5, '', '2222', '', 3, '222', NULL, '2018-08-07 07:38:26', '2018-08-07 07:39:16'),
+	(7, '', '11111111111111111', NULL, 7, '1', NULL, '2018-08-08 04:01:41', '2018-08-08 04:01:41'),
+	(8, '', '11111111111111111', NULL, 7, NULL, NULL, '2018-08-08 04:01:41', '2018-08-08 04:01:41');
 /*!40000 ALTER TABLE `product_skus` ENABLE KEYS */;
 
 -- 导出  表 ladmin.slides 结构

@@ -15,6 +15,7 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('description')->comment('厂牌描述');
             $table->unsignedInteger('cate_id')->comment('关联厂牌分类id');
             $table->string('image');
             $table->integer('order')->nullable();
