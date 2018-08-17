@@ -109,7 +109,7 @@ class SlideController extends Controller
             $form->display('id', 'ID');
            
             $form->select('parent_id', '所属栏目')->options(Category::where(['parent_id' => 1])->pluck('name'));
-            $form->image('image', '图片上传')->rules('required');
+            $form->image('image', '图片上传')->rules('mimes:gif,jpg,png,jpeg');
 
             $form->text('name', '图片标题')->rules('required|min:3');
             $form->text('en_name', '英文图片标题')->rules('required');

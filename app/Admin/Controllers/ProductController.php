@@ -94,11 +94,11 @@ class ProductController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '产品名称')->rules('required');
             $form->text('en_title', '英文产品名称')->rules('required');
-            $form->image('image', '封面图片')->rules('required|image');
+            $form->image('image', '封面图片')->rules('mimes:gif,jpg,png,jpeg');
             $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->image('image', '特征图片')->rules('image');
+                $form->image('image', '特征图片')->rules('mimes:gif,jpg,png,jpeg');
                 $form->text('title', '特征名称')->rules('required');
                 $form->text('en_title', '英文特征名称')->rules('required');
                 $form->text('description', '特征描述')->rules('required');
