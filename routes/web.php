@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('product', 'ProductController@index')->name('product');
+Route::get('brands', 'BrandsController@index')->name('brands');
+Route::get('about', 'AboutController@index')->name('about');
+Route::get('career', 'CareerController@index')->name('career');
+Route::get('news', 'NewsController@index')->name('news');

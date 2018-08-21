@@ -92,9 +92,9 @@ class ProductController extends Controller
         return Admin::form(Product::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('title', '产品名称')->rules('required');
+            $form->text('title', '产品名称')->rules('required')->placeholder('请填写产品名称');
             $form->text('en_title', '英文产品名称')->rules('required');
-            $form->image('image', '封面图片')->rules('mimes:gif,jpg,png,jpeg');
+            $form->image('image', '封面图片')->rules('mimes:gif,jpg,png,jpeg')->help('gif,jpg,png,jpeg');
             $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
@@ -107,8 +107,8 @@ class ProductController extends Controller
             // $form->multipleFile('file', '文件上传')->removable()->rules('mimes:doc,docx,xlsx,wps');
             // $form->multipleFile('video', '视频上传')->removable()->rules('mimes:mp4.avi.rmvb');
 
-            $form->multipleFile('file', '文件上传')->removable();
-            $form->multipleFile('video', '视频上传')->removable();
+            $form->multipleFile('file', '文件上传')->removable()->help('多选');
+            $form->multipleFile('video', '视频上传')->removable()->help('多选');
 
 
             $form->editor('body', '产品描述')->rules('required');
