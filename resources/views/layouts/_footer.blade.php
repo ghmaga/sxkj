@@ -36,7 +36,7 @@ $(function(){
 	});
 });
 if($('.content-home').size() == 1){
-	var contetTop = 698;
+	var contetTop = 747;
 }else{
 	var contetTop = 370;
 }

@@ -10,4 +10,15 @@ class HomeController extends Controller
     {
     	return view('home.index');
     }
+
+    public function changeLocale($locale)
+    {
+        if (in_array($locale, ['en', 'zh'])) {
+            session()->put('locale', $locale);
+        }
+        return redirect()
+            ->back()
+            ->withInput();
+    }
+
 }

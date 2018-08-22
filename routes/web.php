@@ -17,3 +17,14 @@ Route::get('brands', 'BrandsController@index')->name('brands');
 Route::get('about', 'AboutController@index')->name('about');
 Route::get('career', 'CareerController@index')->name('career');
 Route::get('news', 'NewsController@index')->name('news');
+
+//修改语言
+Route::get('/changeLocale/{locale}', 'HomeController@changeLocale');
+
+
+//根据session值设置语言
+Route::group(['middleware' => ['setLocale']], function() {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
+

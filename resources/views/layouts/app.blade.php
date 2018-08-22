@@ -9,7 +9,7 @@
 <meta http-equiv="Cache" content="no-cache">
 <meta name="description" content="">
 <meta name="keywords" content="">
- <title>@yield('title', '森西科技')</title>
+<title>@yield('title', '森西科技')</title>
 <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
 <link rel="stylesheet" type="text/css" href="css/website.css?v=<?php echo rand();?>" />
 <script src="js/jquery.js"></script>
@@ -23,3 +23,5 @@
     @include('layouts._footer')
 </body>
 </html>
+
+
