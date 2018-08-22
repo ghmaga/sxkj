@@ -3,8 +3,8 @@
 
 @section('content')
 <div class="tab">
-	<a href="{{ route('about') }}" class="hover">ABOUT US</a>
-	<a href="{{ route('news') }}">NEWS</a>
+	<a href="about.php" class="hover">ABOUT US</a>
+	<a href="news.php">NEWS</a>
 </div>
 <div class="about-blank"></div>
 <div class="about-box"></div>

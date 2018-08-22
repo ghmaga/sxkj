@@ -31,7 +31,7 @@
 					<li>Live cell assay support with environmental controls</li>
 					<li>Compact design for quick installation and setup</li>
 				</ul>
-				<a href="#" class="more1">LEARN MORE</a>
+				<a href="product-detail.php" class="more1">LEARN MORE</a>
 			</dd>
 		</dl>
 		<dl>
@@ -44,7 +44,7 @@
 					<li>Live cell assay support with environmental controls</li>
 					<li>Compact design for quick installation and setup</li>
 				</ul>
-				<a href="#" class="more1">LEARN MORE</a>
+				<a href="product-detail.php" class="more1">LEARN MORE</a>
 			</dd>
 		</dl>
 	</div>

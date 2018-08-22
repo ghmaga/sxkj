@@ -44,6 +44,15 @@
 			<br>
 			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
 			<br>
+		</li>
+		<li>
+			<strong>Sales</strong>
+			<div class="text-center">Position Requirements</div>
+			<br>
+			1.Can communicate with foreign colleagues in both spoken and written English smoothly. <br>
+			<br>
+			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
+			<br>
 			3.Expert with various network technologies, have basic computer network knowledges. <br>
 			<br>
 			4.Familiar with mainstream cloud services and technologies and having experience in monitoring / managing those services. <br>
