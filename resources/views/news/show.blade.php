@@ -3,26 +3,29 @@
 
 @section('content')
 <div class="tab">
-	<a href="about.php">ABOUT US</a>
-	<a href="news.php" class="hover">NEWS</a>
+	<a href="{{ route('about') }}" class="{{ active_class(if_uri_pattern('about'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a>
+	<a href="{{ route('news') }}" class="{{ active_class(if_uri_pattern('news'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</a>
 </div>
 <div class="container">
-	<h2 class="news-detail-title">MIAO WEI ATTENDED THE 2017 INDUSTRIAL INTERNET SUMMIT AND DELIVERED A SPEECH</h2>
+	<h2 class="news-detail-title">{{ (Session::get('locale') == 'en') ? $news->en_title : $news->title }}</h2>
 	<div class="news-detail-content">
-		MIAO WEI ATTENDED THE 2017 INDUSTRIAL<br>
-		MIAO WEI ATTENDED THE 2017 INDUSTRIALMIAO WEI ATTENDED THE 2017 INDUSTRIAL<br>
-		MIAO WEI ATTENDED THE 2017<br>
-		<br>
-		<br>
-		MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL <br>
-		<br>
-		MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO MIAO WEI ATTENDED THE 2017 INDUSTRIAL  WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL <br>
-		<br>
-		MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL  ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL MIAO WEI ATTENDED THE 2017 INDUSTRIAL <br>
+		@if(Session::get('locale') == 'en')
+			{!! $news->en_body !!}
+		@else
+			{!! $news->body !!}
+		@endif
 	</div>
 	<div class="news-detail-page">
-		<a href="/post/{$previousPostID}">Prev News</a>
-		<a href="/post/{$nextPostId}">Next News</a>
+		@if($previousPostID)
+		<a href="{{route('news.show', $previousPostID)}}">Prev News</a>
+		@else
+		<a href="#">{{ (Session::get('locale') == 'en') ? 'Null' : '没有了' }}</a>
+		@endif
+		@if($nextPostId)
+		<a href="{{route('news.show', $nextPostId)}}">Next News</a>
+		@else
+		<a href="#">{{ (Session::get('locale') == 'en') ? 'Null' : '没有了' }}</a>
+		@endif
 	</div>
 </div>
 @stop

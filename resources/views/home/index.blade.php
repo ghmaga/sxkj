@@ -10,7 +10,7 @@
 			Sinsitech Instruments, Inc. is a global leader in the development, manufacture and sale of life science instrumentation, including imaging & microscopy, multi-mode detection, liquid handling and automation systems. Our philosophy transcends conventional thinking and challenges the status quo. We develop fresh, original solutions by unifying concepts that often appear to be opposed. It means to shape and reshape. To engineer, build, deliver and support products that best serve the marketplace by providing what you need, when you need it. <br>
 			<br>
 			<b>Science First.</b> It’s the difference between leading and following.
-			<div class="text-right"><a href="#" class="more1">MORE ABOUT SINSITECH</a></div>
+			<div class="text-right"><a href="{{ route('about') }}" class="more1">{{ (Session::get('locale') == 'en') ?  'MORE ABOUT SINSITECH' : '关于我们' }}</a></div>
 		</div>
 		<h2 class="title">POPULAR PORDUCT</h2>
 		<a href="javascript:;" class="swiper-home-button-prev"></a>
@@ -30,13 +30,16 @@
 </div>
 <div class="home-news">
 	<div class="container">
-		<h2 class="title color-white">NEWS</h2>
+		<h2 class="title color-white">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</h2>
 		<dl>
-			<dt><a href="#"><img src="image/473x343.jpg" alt=""></a></dt>
+			<dt><a href="{{ route('news.show', $news->id) }}"><img src="uploads/{{ $news->image }}" alt=""></a></dt>
 			<dd class="color-white">
-				<a href="#" class="color-white">Nature: the university of California, California, has developed a new CRISPR delivery system to create cancer-fighting T cells in just a week</a>
-				Recently, nature published the results of a new study by researchers at the university of California, San Francisco, that developed a CRISPR/Cas9 delivery system based on electroporation technology, faster, safer and cheaper without virus transfection. Using this technique, the researchers were able to repair defective cells in patients with single-gene mutation, transfer more than 1kb of DNA sequence into T cells, create more targeted tcr-t cells for melanoma cells, and show better anti-cancer effect in the body. <br>
-				With the new technology, the genetic modification of T cells can be completed in a week or so, much faster than the usual method of gene editing.
+				<a href="{{ route('news.show', $news->id) }}" class="color-white">{{ (Session::get('locale') == 'en') ? $news->en_title : $news->title }}</a>
+				@if(Session::get('locale') == 'en')
+					{!! $news->en_description !!}
+				@else
+					{!! $news->description !!}
+				@endif
 			</dd>
 		</dl>
 	</div>

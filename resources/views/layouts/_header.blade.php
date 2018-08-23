@@ -22,12 +22,11 @@
 </div>
 <div class="swiper-container swiper-top" id="swiper-top">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide" style="background-image: url('/image/1.jpg');">
-			<p class="container color-white text-center">{{ (Session::get('locale') == 'en') ? 'pages title' : '页面主标题' }}</p>
+		@foreach($slides as $slide)
+		<div class="swiper-slide" style="background-image: url(/uploads/{{ $slide['image'] }});">
+			<p class="container color-white text-center">{{ (Session::get('locale') == 'en') ? $slide['en_name'] : $slide['name'] }}</p>
 		</div>
-		<div class="swiper-slide" style="background-image: url('/image/6.jpg');">
-			<p class="container color-white">自定义标题 <br>带br可换行 <br> science robotics</p>
-		</div>
+		@endforeach
 	</div>
 	<a href="javascript:;" class="swiper-button-next"></a>
 	<a href="javascript:;" class="swiper-button-prev"></a>

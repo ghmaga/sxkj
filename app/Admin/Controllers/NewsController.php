@@ -94,6 +94,7 @@ class NewsController extends Controller
             $form->display('id', 'ID');
 
             $form->text('title', '标题')->rules('required');
+            $form->text('en_title', '英文标题')->rules('required');
             $form->select('cate_id', '产品分类')->options(Category::where(['parent_id' => 3])->pluck('name'));
             $form->image('image', '封面图片')->rules('mimes:gif,jpg,png,jpeg');
            

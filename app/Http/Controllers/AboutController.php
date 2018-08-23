@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slide;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -9,6 +10,7 @@ class AboutController extends Controller
     //
     public function index()
     {
-    	return view('about.index');
+    	$slides = Slide::where('parent_id', 3)->get();
+    	return view('about.index', compact('slides'));
     }
 }
