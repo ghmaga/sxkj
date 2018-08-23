@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-    	return view('home.index');
+        $products = Product::where('push', 1)->get();
+        // dd($product);
+    	return view('home.index', compact('products'));
     }
+
 
     public function changeLocale($locale)
     {

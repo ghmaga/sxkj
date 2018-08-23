@@ -10,11 +10,11 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <title>@yield('title', '森西科技')</title>
-<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
-<link rel="stylesheet" type="text/css" href="css/website.css?v=<?php echo rand();?>" />
-<script src="js/jquery.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/website.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/website.css?v=<?php echo rand();?>" />
+<script src="/js/jquery.js"></script>
+<script src="/js/swiper.min.js"></script>
+<script src="/js/website.js"></script>
 </head>
 
 <body>
@@ -25,5 +25,3 @@
     @include('layouts._footer')
 </body>
 </html>
-
-

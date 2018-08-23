@@ -17,36 +17,13 @@
 		<a href="javascript:;" class="swiper-home-button-next"></a>
 		<div class="swiper-container swiper-home" id="swiper-home">
 			<div class="swiper-wrapper">
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">incuCyte S3</div>
-					<div class="popular-image"><img src="image/1.png" alt=""></div>
+				@foreach($products as $product)
+				<a href="{{ route('product.show', $product['id']) }}" class="swiper-slide">
+					<div class="popular-title color-white">{{ (Session::get('locale') == 'en') ?  $product['en_title'] : $product['title'] }}</div>
+					<div class="popular-image"><img src="uploads/{{ $product['image'] }}" alt=""></div>
 					<div class="more2">READ MORE</div>
 				</a>
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">AVATAR</div>
-					<div class="popular-image"><img src="image/2.png" alt=""></div>
-					<div class="more2">READ MORE</div>
-				</a>
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">Que Screener</div>
-					<div class="popular-image"><img src="image/3.png" alt=""></div>
-					<div class="more2">READ MORE</div>
-				</a>
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">incuCyte S3</div>
-					<div class="popular-image"><img src="image/1.png" alt=""></div>
-					<div class="more2">READ MORE</div>
-				</a>
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">AVATAR</div>
-					<div class="popular-image"><img src="image/3.png" alt=""></div>
-					<div class="more2">READ MORE</div>
-				</a>
-				<a href="#" class="swiper-slide">
-					<div class="popular-title color-white">Que Screener</div>
-					<div class="popular-image"><img src="image/2.png" alt=""></div>
-					<div class="more2">READ MORE</div>
-				</a>
+				@endforeach;
 			</div>
 		</div>
 	</div>

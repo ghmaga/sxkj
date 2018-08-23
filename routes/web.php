@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('product', 'ProductController@index')->name('product');
+Route::get('product/{id}', 'ProductController@show')->name('product.show');
 Route::get('brands', 'BrandsController@index')->name('brands');
 Route::get('about', 'AboutController@index')->name('about');
 Route::get('career', 'CareerController@index')->name('career');

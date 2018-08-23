@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="container clear">
-		<h1 class="logo"><a href="index.php"><img src="image/logo.png" height="63" alt="森西科技"></a></h1>
+		<h1 class="logo"><a href="index.php"><img src="/image/logo.png" height="63" alt="森西科技"></a></h1>
 		<a href="javascript:;" class="search"></a>
 		<ul class="navigation">
 			<li><a href="{{ route('home') }}" class="{{ active_class(if_uri_pattern('/'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'Home' : '主页' }}</a></li>
@@ -22,10 +22,10 @@
 </div>
 <div class="swiper-container swiper-top" id="swiper-top">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide" style="background-image: url('image/1.jpg');">
+		<div class="swiper-slide" style="background-image: url('/image/1.jpg');">
 			<p class="container color-white text-center">{{ (Session::get('locale') == 'en') ? 'pages title' : '页面主标题' }}</p>
 		</div>
-		<div class="swiper-slide" style="background-image: url('image/6.jpg');">
+		<div class="swiper-slide" style="background-image: url('/image/6.jpg');">
 			<p class="container color-white">自定义标题 <br>带br可换行 <br> science robotics</p>
 		</div>
 	</div>

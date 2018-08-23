@@ -1,43 +1,27 @@
 @extends('layouts.app')
 @section('title', 'Product')
 
-@section('content'
+@section('content')
 <div class="container">
 	<div class="tags">
-		<a href="index.php">Home</a>
+		<a href="{{ route('home')}}">{{ (Session::get('locale') == 'en') ? 'Home' : '主页' }}</a>
 		&gt;
-		<a href="product.php">PRODUCT</a>
+		<a href="{{ route('product') }}">{{ (Session::get('locale') == 'en') ? 'PRODUCT' : '产品' }}</a>
 		&gt;
-		<a href="product.php">GYROS</a>
-	</div>
-	<h2 class="title">GYROS</h2>
+		<a href="#">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</a>
+	</div>	
+	<h2 class="title">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</h2>
 	<div class="product-detail">
+		@foreach($skus as $sku)
 		<dl>
-			<dt><img src="image/1.png" alt=""></dt>
+			<dt><img src="/uploads/{{ $sku['image'] }}" alt=""></dt>
 			<dd>
-				标题<br>
+				{{ (Session::get('locale') == 'en') ? $sku['en_title'] : $sku['title'] }}<br>
 				<br>
-				内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容<br>
-				<br>
-				内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+				{{ (Session::get('locale') == 'en') ? $sku['en_description'] : $sku['description'] }}
 			</dd>
 		</dl>
-		<dl>
-			<dt><img src="image/1.png" alt=""></dt>
-			<dd>
-				标题<br>
-				<br>
-				内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-			</dd>
-		</dl>
-		<dl>
-			<dt><img src="image/1.png" alt=""></dt>
-			<dd>
-				标题<br>
-				<br>
-				内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-			</dd>
-		</dl>
+		@endforeach
 	</div>
 	<h2 class="title">VIDEO</h2>
 	<ul class="video">

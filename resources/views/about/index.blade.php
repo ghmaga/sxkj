@@ -3,8 +3,8 @@
 
 @section('content')
 <div class="tab">
-	<a href="about.php" class="hover">ABOUT US</a>
-	<a href="news.php">NEWS</a>
+	<a href="{{ route('about') }}" class="{{ active_class(if_uri_pattern('/'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a>
+	<a href="{{ route('news') }}" class="{{ active_class(if_uri_pattern('/'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</a>
 </div>
 <div class="about-blank"></div>
 <div class="about-box"></div>

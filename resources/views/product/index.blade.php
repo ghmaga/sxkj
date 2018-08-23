@@ -4,9 +4,9 @@
 @section('content')
 <div class="container">
 	<div class="tags">
-		<a href="index.php">Home</a>
+		<a href="{{ route('home') }}">{{ (Session::get('locale') == 'en') ? 'Home' : '主页' }}</a>
 		&gt;
-		<a href="product.php">PRODUCT</a>
+		<a href="{{ route('product') }}">{{ (Session::get('locale') == 'en') ? 'PRODUCT' : '产品' }}</a>
 	</div>
 	<div class="product-tags">
 		<a href="#"><span class="product-tag-icon"><img src="image/p1.png" alt=""></span>Drug Discovery</a>
