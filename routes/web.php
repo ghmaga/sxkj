@@ -15,9 +15,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('product', 'ProductController@index')->name('product');
 Route::get('product/{id}', 'ProductController@show')->name('product.show');
 Route::get('brands', 'BrandsController@index')->name('brands');
+Route::get('brands/{id}', 'BrandsController@show')->name('brands.show');
 Route::get('about', 'AboutController@index')->name('about');
 Route::get('career', 'CareerController@index')->name('career');
 Route::get('news', 'NewsController@index')->name('news');
+Route::get('nwes/{id}', 'NewsController@show')->name('news.show');
 
 //修改语言
 Route::get('/changeLocale/{locale}', 'HomeController@changeLocale');

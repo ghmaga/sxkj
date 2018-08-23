@@ -10,4 +10,9 @@ class BrandsController extends Controller
     {
     	return view('brands.index');
     }
+
+    public function show()
+    {
+    	return view('brands.show');
+    }
 }
