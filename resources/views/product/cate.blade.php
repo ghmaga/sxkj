@@ -9,15 +9,15 @@
 		<a href="{{ route('product') }}">{{ (Session::get('locale') == 'en') ? 'PRODUCT' : '产品' }}</a>
 	</div>
 	<div class="product-tags">
-		<a href="{{ route('product.cate', 0) }}"><span class="product-tag-icon"><img src="/image/p1.png" alt=""></span>Drug Discovery</a>
-		<a href="{{ route('product.cate', 1) }}"><span class="product-tag-icon"><img src="/image/p2.png" alt=""></span>Immunology</a>
-		<a href="{{ route('product.cate', 2) }}"><span class="product-tag-icon"><img src="/image/p3.png" alt=""></span>Genomics</a>
-		<a href="{{ route('product.cate', 3) }}"><span class="product-tag-icon"><img src="/image/p4.png" alt=""></span>Molecular Biology</a>
-		<a href="{{ route('product.cate', 4) }}"><span class="product-tag-icon"><img src="/image/p5.png" alt=""></span>Precision Medicine</a>
-		<a href="{{ route('product.cate', 5) }}"><span class="product-tag-icon"><img src="/image/p6.png" alt=""></span>Common Instruments</a>
-		<a href="{{ route('product.cate', 6) }}"><span class="product-tag-icon"><img src="/image/p7.png" alt=""></span>Zoopery Instrumens</a>
-		<a href="{{ route('product.cate', 7) }}"><span class="product-tag-icon"><img src="/image/p8.png" alt=""></span>Cell Biology</a>
-		<a href="{{ route('product.cate', '-1') }}"><span class="product-tag-icon"><img src="/image/p0.png" alt=""></span>View all Products</a>
+		<a href="{{ route('product.cate', 2) }}"><span class="product-tag-icon"><img src="/image/p1.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Drug Discovery' : '药物开发' }}</a>
+		<a href="{{ route('product.cate', 4) }}"><span class="product-tag-icon"><img src="/image/p2.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Immunology' : '免疫组学' }}</a>
+		<a href="{{ route('product.cate', 5) }}"><span class="product-tag-icon"><img src="/image/p3.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Genomics' : '基因组学' }}</a>
+		<a href="{{ route('product.cate', 3) }}"><span class="product-tag-icon"><img src="/image/p4.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Molecular Biology' : '分子生物' }}</a>
+		<a href="{{ route('product.cate', 0) }}"><span class="product-tag-icon"><img src="/image/p5.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Precision Medicine' : '精准医疗' }}</a>
+		<a href="{{ route('product.cate', 6) }}"><span class="product-tag-icon"><img src="/image/p6.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Common Instruments' : '一般仪器' }}</a>
+		<a href="{{ route('product.cate', 7) }}"><span class="product-tag-icon"><img src="/image/p7.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Zoopery Instrumens' : '动物仪器' }}</a>
+		<a href="{{ route('product.cate', 1) }}"><span class="product-tag-icon"><img src="/image/p8.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Cell Biology' : '细胞生物学' }}</a>
+		<a href="{{ route('product.cate', '-1') }}"><span class="product-tag-icon"><img src="/image/p0.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'View all Products' : '所有产品' }}</a>
 	</div>
 	<h2 class="title">GYROS</h2>
 	<div class="product-item">
