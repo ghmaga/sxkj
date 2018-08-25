@@ -21,18 +21,18 @@
 	</div>
 	<h2 class="title">GYROS</h2>
 	<div class="product-item">
-		@foreach($pushproduct as $product)
+		@foreach($catetories as $catetory)
 			<dl>
-				<dt><img src="/uploads/{{ $product['image'] }}" alt=""></dt>
+				<dt><img src="/uploads/{{ $catetory['image'] }}" alt=""></dt>
 				<dd>
 					<ul class="product-item-point">
 						@if(Session::get('locale') == 'en')
-							{!! $product['en_body'] !!}
+							{!! $catetory['en_body'] !!}
 						@else
-							{!! $product['body'] !!}
+							{!! $catetory['body'] !!}
 						@endif
 					</ul>
-					<a href="{{ route('product.show', $product['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
+					<a href="{{ route('product.show', $catetory['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
 				</dd>
 			</dl>
 		@endforeach

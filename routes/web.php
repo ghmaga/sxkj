@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('product', 'ProductController@index')->name('product');
 Route::get('product/{id}', 'ProductController@show')->name('product.show');
+Route::get('product/cate/{parent_id}', 'ProductController@cate')->name('product.cate');
 Route::get('brands', 'BrandsController@index')->name('brands');
 Route::get('brands/{id}', 'BrandsController@show')->name('brands.show');
 Route::get('about', 'AboutController@index')->name('about');
