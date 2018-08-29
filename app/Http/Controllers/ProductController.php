@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Slide;
 use App\Models\Product;
 use App\Models\ProductSku;
+use App\Models\ProductFile;
+use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -21,9 +23,12 @@ class ProductController extends Controller
     {
     	$product = Product::find($id);
     	$skus = ProductSku::where('product_id', $id)->get();
+        $files = ProductFile::where('product_id', $id)->get();
+        $videos = ProductVideo::where('product_id', $id)->get();
+        // dd($videos);
         $slides = Slide::where('parent_id', 0)->get();
     	// dd($skus);
-    	return view('product.show', compact('product', 'skus', 'slides'));
+    	return view('product.show', compact('product', 'skus', 'slides', 'files', 'videos'));
     }
 
     public function cate($cate)

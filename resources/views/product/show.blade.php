@@ -11,29 +11,45 @@
 		<a href="#">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</a>
 	</div>	
 	<h2 class="title">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</h2>
-	<div class="product-detail">
-		@foreach($skus as $sku)
-		<dl>
-			<dt><img src="/uploads/{{ $sku['image'] }}" alt=""></dt>
-			<dd>
-				{{ (Session::get('locale') == 'en') ? $sku['en_title'] : $sku['title'] }}<br>
-				<br>
-				{{ (Session::get('locale') == 'en') ? $sku['en_description'] : $sku['description'] }}
-			</dd>
-		</dl>
-		@endforeach
-	</div>
-	<h2 class="title">VIDEO</h2>
-	<ul class="video">
-		<li><video controls src="http://vjs.zencdn.net/v/oceans.mp4" poster="http://vjs.zencdn.net/v/oceans.png"></video>heading</li>
-		<li><video controls src="http://vjs.zencdn.net/v/oceans.mp4" poster="http://vjs.zencdn.net/v/oceans.png"></video>heading</li>
-	</ul>
-	<h2 class="title">DOWNLOAD</h2>
-	<ul class="download">
-		<li><span>Categroy</span><span>File Name</span><span>Download</span></li>
-		<li><span>彩页</span><span>File Name</span><span><a href="#" class="download-link"></a></span></li>
-		<li><span>规格</span><span>File Name</span><span><a href="#" class="download-link"></a></span></li>
-		<li><span>应用指南</span><span>File Name</span><span><a href="#" class="download-link"></a></span></li>
-	</ul>
+	@if(count($skus))
+		<div class="product-detail">
+			@foreach($skus as $sku)
+			<dl>
+				<dt><img src="/uploads/{{ $sku['image'] }}" alt=""></dt>
+				<dd>
+					{{ (Session::get('locale') == 'en') ? $sku['en_title'] : $sku['title'] }}<br>
+					<br>
+					@if(Session::get('locale') == 'en')
+						{!! $sku['en_description'] !!}
+					@else
+						{!! $sku['description'] !!}
+					@endif
+					
+				</dd>
+			</dl>
+			@endforeach
+		</div>
+	@endif
+	@if(count($videos))
+		<h2 class="title">{{ (Session::get('locale') == 'en') ? 'VIDEO' : '视频' }}</h2>
+		<ul class="video">
+			@foreach($videos as $val)
+				<li>
+					<video controls src="/uploads/{{ $val['video'] }}" poster="{{ $val['video'] }}"></video>{{ (Session::get('locale') == 'en') ? $val['en_filename'] : $val['filename'] }}
+				</li>
+			@endforeach
+		</ul>
+	@endif
+	@if(count($files))
+		<h2 class="title">{{ (Session::get('locale') == 'en') ? 'DOWNLOAD' : '下载' }}</h2>
+		<ul class="download">
+			<li><span>{{ (Session::get('locale') == 'en') ? 'Categroy' : '分类' }}</span><span>{{ (Session::get('locale') == 'en') ? 'File Name' : '文件名称' }}</span><span>{{ (Session::get('locale') == 'en') ? 'Download' : '下载' }}</span></li>
+			@foreach($files as $val)
+				<li>
+					<span>{{ (Session::get('locale') == 'en') ? $val['en_catename'] : $val['catename'] }}</span><span>{{ (Session::get('locale') == 'en') ? $val['en_filename'] : $val['filename'] }}</span><span><a href="/uploads/{{ $val['file'] }}" class="download-link"></a></span>
+				</li>
+			@endforeach
+		</ul>
+	@endif
 </div>
 @stop
