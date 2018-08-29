@@ -93,33 +93,42 @@ class ProductController extends Controller
 
             $form->display('id', 'ID');
             $form->text('title', '产品名称')->rules('required')->placeholder('请填写产品名称');
-            $form->text('en_title', '英文产品名称')->rules('required');
-            $form->image('image', '封面图片')->rules('mimes:gif,jpg,png,jpeg')->help('gif,jpg,png,jpeg');
+            $form->text('en_title', '英文产品名称');
+            $form->image('image', '封面图片');
             $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->image('image', '特征图片')->rules('mimes:gif,jpg,png,jpeg');
-                $form->text('title', '特征名称')->rules('required');
-                $form->text('en_title', '英文特征名称')->rules('required');
-                $form->text('description', '特征描述')->rules('required');
-                $form->text('en_description', '英文特征描述')->rules('required');
+                $form->image('image', '特征图片');
+                $form->text('title', '特征名称');
+                $form->text('en_title', '英文特征名称');
+                $form->textarea('description', '特征描述');
+                $form->textarea('en_description', '英文特征描述');
             });
-            // $form->multipleFile('file', '文件上传')->removable()->rules('mimes:doc,docx,xlsx,wps');
-            // $form->multipleFile('video', '视频上传')->removable()->rules('mimes:mp4.avi.rmvb');
+            
 
-            $form->multipleFile('file', '文件上传')->removable()->help('多选');
-            $form->multipleFile('video', '视频上传')->removable()->help('多选');
+            $form->editor('body', '产品描述');
+            $form->editor('en_body', '英文产品描述');
 
+            $form->hasMany('file', '文件', function (Form\NestedForm $form) {
+                $form->text('filename', '名称');
+                $form->text('en_filename', '英文名称');
+                $form->text('catename', '分类名称');
+                $form->text('en_catename', '英文分类名称');
+                $form->file('file', '文件上传');
+            });
 
-            $form->editor('body', '产品描述')->rules('required');
-            $form->editor('en_body', '英文产品描述')->rules('required');
+            $form->hasMany('video', '视频', function (Form\NestedForm $form) {
+                $form->text('filename', '视频名称');
+                $form->text('en_filename', '视频英文名称');
+                $form->file('video', '视频上传');
+            });
             $states = [
                 'on'  => ['value' => 1, 'text' => '打开', 'color' => 'success'],
                 'off' => ['value' => 0, 'text' => '关闭', 'color' => 'danger'],
             ];
 
-            $form->switch('push', '推荐')->states($states);
-            //$form->editor('description', '商品描述')->rules('required');
+            $form->switch('recommend', '推荐')->states($states);
+            //$form->editor('description', '商品描述');
             $form->text('order', '排序');
         });
     }

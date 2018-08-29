@@ -15,28 +15,42 @@ class Product extends Model
 		return $this->hasMany(ProductSku::class);
 	}
 
-	public function setFileAttribute($file)
-	{
-	    if (is_array($file)) {
-	        $this->attributes['file'] = json_encode($file);
-	    }
-	}
 
-	public function getFileAttribute($file)
+	//与商品SKU关联
+	public function file()
 	{
-	    return json_decode($file, true);
+		return $this->hasMany(ProductFile::class);
 	}
 
 
-	public function setVideoAttribute($video)
+	//与商品SKU关联
+	public function video()
 	{
-	    if (is_array($video)) {
-	        $this->attributes['video'] = json_encode($video);
-	    }
+		return $this->hasMany(ProductVideo::class);
 	}
 
-	public function getVideoAttribute($video)
-	{
-	    return json_decode($video, true);
-	}
+	// public function setFileAttribute($file)
+	// {
+	//     if (is_array($file)) {
+	//         $this->attributes['file'] = json_encode($file);
+	//     }
+	// }
+
+	// public function getFileAttribute($file)
+	// {
+	//     return json_decode($file, true);
+	// }
+
+
+	// public function setVideoAttribute($video)
+	// {
+	//     if (is_array($video)) {
+	//         $this->attributes['video'] = json_encode($video);
+	//     }
+	// }
+
+	// public function getVideoAttribute($video)
+	// {
+	//     return json_decode($video, true);
+	// }
 }

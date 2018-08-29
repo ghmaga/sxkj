@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         //获取产品轮换图id=0
         $slides = Slide::where('parent_id', 0)->get();
-        $pushproduct = Product::where('push', 1)->limit(2)->get();
+        $pushproduct = Product::where('recommend', 1)->limit(2)->get();
     	return view('product.index', compact('slides', 'pushproduct'));
     }
 
