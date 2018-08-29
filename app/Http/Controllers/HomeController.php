@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         //获取推荐产品
-        $products = Product::where('push', 1)->get();
+        $products = Product::where('recommend', 1)->get();
         //获取首页轮换图id=5
         $slides = Slide::where('parent_id', 5)->get();
         // dd($slides);
