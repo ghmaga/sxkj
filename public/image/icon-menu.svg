@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="32px" viewBox="0 0 46 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="89.6700058%" cy="13.0763516%" fx="89.6700058%" fy="13.0763516%" r="106.667545%" gradientTransform="translate(0.896700,0.130764),scale(0.700000,1.000000),rotate(145.126939),translate(-0.896700,-0.130764)" id="radialGradient-1">
+            <stop stop-color="#445C7B" offset="0%"></stop>
+            <stop stop-color="#445C7B" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-629.000000, -59.000000)" id="mobile-header" fill-rule="nonzero" fill="url(#radialGradient-1)">
+            <g>
+                <g id="icon-menu" transform="translate(629.000000, 59.000000)">
+                    <path d="M2.28571429,18.2857143 L43.4285714,18.2857143 C44.6902857,18.2857143 45.7142857,17.2617143 45.7142857,16 C45.7142857,14.7382857 44.6902857,13.7142857 43.4285714,13.7142857 L2.28571429,13.7142857 C1.024,13.7142857 0,14.7382857 0,16 C0,17.2617143 1.024,18.2857143 2.28571429,18.2857143 Z M2.28571429,4.57142857 L43.4285714,4.57142857 C44.6902857,4.57142857 45.7142857,3.54742857 45.7142857,2.28571429 C45.7142857,1.024 44.6902857,0 43.4285714,0 L2.28571429,0 C1.024,0 0,1.024 0,2.28571429 C0,3.54742857 1.024,4.57142857 2.28571429,4.57142857 Z M2.28571429,32 L43.4285714,32 C44.6902857,32 45.7142857,30.976 45.7142857,29.7142857 C45.7142857,28.4525714 44.6902857,27.4285714 43.4285714,27.4285714 L2.28571429,27.4285714 C1.024,27.4285714 0,28.4525714 0,29.7142857 C0,30.976 1.024,32 2.28571429,32 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
