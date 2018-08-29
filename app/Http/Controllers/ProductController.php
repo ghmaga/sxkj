@@ -35,9 +35,9 @@ class ProductController extends Controller
     {
         if($cate == '-1')
         {
-            $catetories = Product::all();
+            $catetories = Product::distinct()->get(['title', 'en_title']);
         }else{
-            $catetories = Product::where('parent_id', $cate)->get();
+            $catetories = Product::where('parent_id','like','%'.$cate.'%')->get();
         }
         $slides = Slide::where('parent_id', 0)->get();
          // dd($catetories);

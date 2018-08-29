@@ -95,7 +95,9 @@ class ProductController extends Controller
             $form->text('title', '产品名称')->rules('required')->placeholder('请填写产品名称');
             $form->text('en_title', '英文产品名称');
             $form->image('image', '封面图片');
-            $form->select('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
+            $form->multipleSelect('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
+            // $form->checkbox('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
+            // $form->checkbox($column[, $label])->options([1 => 'foo', 2 => 'bar', 'val' => 'Option name'])->stacked();
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
                 $form->image('image', '特征图片');

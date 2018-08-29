@@ -16,18 +16,28 @@ class Product extends Model
 	}
 
 
-	//与商品SKU关联
+	//与file关联
 	public function file()
 	{
 		return $this->hasMany(ProductFile::class);
 	}
 
 
-	//与商品SKU关联
+	//与video关联
 	public function video()
 	{
 		return $this->hasMany(ProductVideo::class);
 	}
+
+	public function getParentIdAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setParentIdAttribute($value)
+    {
+        $this->attributes['parent_id'] = implode(',', $value);
+    }
 
 	// public function setFileAttribute($file)
 	// {
