@@ -50,6 +50,7 @@ $('#content').addClass('content-home');
 $('#swiper-home .swiper-slide:odd').addClass('nobg');
 new Swiper('#swiper-home', {
 	loop: true,
+	autoplay: 4000,
 	slidesPerView: 'auto',
 	nextButton: '.swiper-home-button-next',
 	prevButton: '.swiper-home-button-prev'

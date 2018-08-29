@@ -22,6 +22,13 @@
 <script>
 new Swiper('#swiper-top', {
 	loop: true,
+	autoplay: 4000,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev'
+});
+new Swiper('#swiper-top', {
+	loop: true,
+	autoplay: 4000,
 	nextButton: '.swiper-button-next',
 	prevButton: '.swiper-button-prev'
 });
@@ -33,6 +40,9 @@ $(function(){
 	$(window).trigger('scroll');
 	$('.gotop').click(function(event) {
 		$('html, body').animate({scrollTop: 0}, 300);
+	});
+	$('.menu-link').click(function(event) {
+		$('.navigation').toggle();
 	});
 });
 if($('.content-home').size() == 1){
@@ -58,18 +68,13 @@ $(window).scroll(function(event) {
 $(window).scroll(function(event) {
 	var t = $(this).scrollTop();
 	if(t > contetTop){
-		$('.header').addClass('mini');
+		if($(this).width() > 768){
+			$('.header').addClass('mini');
+		}
 	}else{
 		if($(this).width() > 1024){
 			$('.header').removeClass('mini');
 		}
-	}
-});
-$(window).resize(function(event) {
-	if($(this).width() > 1024){
-		$('.header').removeClass('mini');
-	}else{
-		$('.header').addClass('mini');
 	}
 });
 </script>

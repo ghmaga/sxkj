@@ -10,9 +10,10 @@
 	</div>
 	<div class="container clear">
 		<h1 class="logo"><a href="index.php"><img src="/image/logo.png" height="63" alt="森西科技"></a></h1>
+		<a href="javascript:;" class="menu-link"></a>
 		<a href="javascript:;" class="search"></a>
 		<ul class="navigation">
-			<li><a href="{{ route('home') }}" class="{{ active_class(if_uri_pattern('/'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'Home' : '主页' }}</a></li>
+			<li><a href="{{ route('home') }}" class="{{ active_class(if_uri_pattern('/'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'HOME' : '主页' }}</a></li>
 			<li><a href="{{ route('product') }}" class="{{ active_class(if_uri_pattern('product'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'PRODUCT' : '产品' }}</a></li>
 			<li><a href="{{ route('brands') }}" class="{{ active_class(if_uri_pattern('brands'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'BRANDS' : '品牌' }}</a></li>
 			<li><a href="{{ route('about') }}" class="{{ active_class(if_uri_pattern('about'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>

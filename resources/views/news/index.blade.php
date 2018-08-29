@@ -16,11 +16,13 @@
 				<a href="{{ route('news.show', $new['id']) }}" class="more3">Consult</a>
 				<div class="news-content">
 					<a href="{{ route('news.show', $new['id']) }}">{{ (Session::get('locale') == 'en') ? $new['en_title'] : $new['title'] }}</a>
-					@if(Session::get('locale') == 'en')
-						{!! $new['en_description'] !!}
-					@else
-						{!! $new['description'] !!}
-					@endif
+					<div class="news-description">
+						@if(Session::get('locale') == 'en')
+							{!! $new['en_description'] !!}
+						@else
+							{!! $new['description'] !!}
+						@endif
+					</div>
 					<div class="news-time">{{ date($new['created_at']) }}</div>
 				</div>
 			</li>
