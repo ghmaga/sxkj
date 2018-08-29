@@ -3,8 +3,8 @@
 
 @section('content')
 <div class="tab">
-	<a href="{{ route('about') }}" class="{{ active_class(if_uri_pattern('about'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a>
-	<a href="{{ route('news') }}" class="{{ active_class(if_uri_pattern('news'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</a>
+	<a href="{{ route('about') }}" class="{{ active_class(if_route('about'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a>
+	<a href="{{ route('news') }}" class="{{ active_class(if_route('news.show'), 'hover', '') }}">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</a>
 </div>
 <div class="container">
 	<h2 class="news-detail-title">{{ (Session::get('locale') == 'en') ? $news->en_title : $news->title }}</h2>

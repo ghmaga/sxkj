@@ -23,7 +23,7 @@
 					<div class="popular-image"><img src="uploads/{{ $product['image'] }}" alt=""></div>
 					<div class="more2">READ MORE</div>
 				</a>
-				@endforeach;
+				@endforeach
 			</div>
 		</div>
 	</div>
