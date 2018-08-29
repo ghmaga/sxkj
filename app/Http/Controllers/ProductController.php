@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         if($cate == '-1')
         {
-            $catetories = Product::distinct()->get(['title', 'en_title']);
+            $catetories = Product::all();
         }else{
             $catetories = Product::where('parent_id','like','%'.$cate.'%')->get();
         }
