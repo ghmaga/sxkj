@@ -127,7 +127,7 @@ class ProductController extends Controller
                 'off' => ['value' => 0, 'text' => '关闭', 'color' => 'danger'],
             ];
 
-            $form->switch('recommend', '推荐')->states($states);
+            $form->switch('recommend', '推荐')->states($states)->help('首页需要显示时打开');
             //$form->editor('description', '商品描述');
             $form->text('order', '排序');
         });
