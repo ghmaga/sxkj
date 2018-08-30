@@ -162,6 +162,7 @@ input, textarea, button { border-radius:0; }
 .product-detail { border: solid #EBEBEB; border-width: 1px 0; margin: 23px 0 34px; }
 	.product-detail dl { margin: 60px 0; overflow: hidden; }
 		.product-detail dt { width: 40%; margin-right: 30px; text-align: center; float: left; }
+			.product-detail dt img { max-width: 100%; }
 		.product-detail dd { width: 50%; overflow: hidden; }
 .video { margin: 46px 0 56px; padding-bottom: 60px; border-bottom: 1px solid #EBEBEB; display: flex; justify-content: space-between; }
 	.video li { width: 43.2%; }
