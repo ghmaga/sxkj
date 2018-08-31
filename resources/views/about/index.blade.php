@@ -22,18 +22,11 @@
 		FAX: 010-84874116 <br>
 		<a href="mailto:service@sinsitech.com">E-mail: service@sinsitech.com</a>
 	</div>
-	<h2 class="title">Collaboratory</h2>
+	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'Collaboratory' : '合作实验室' }}</h2>
 	<ul class="partner">
-		<li><a href="#"><img src="image/p1.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p2.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p3.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p4.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p5.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p6.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p7.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p8.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p9.jpg" alt=""></a></li>
-		<li><a href="#"><img src="image/p10.jpg" alt=""></a></li>
+		@foreach($links as $val)
+			<li><a href="{{ $val['link'] }}"><img src="/uploads/{{ $val['image'] }}" alt=""></a></li>
+		@endforeach
 	</ul>
 </div>
 @stop
