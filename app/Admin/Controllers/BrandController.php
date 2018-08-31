@@ -93,6 +93,8 @@ class BrandController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '厂牌名称')->rules('required');
             $form->text('en_title', '厂牌英文名称');
+            $form->select('cate_id', '厂牌关联')->options(Category::where(['parent_id' => 13])->pluck('name'));
+
             $form->image('image', '厂牌Logo')->rules('mimes:gif,jpg,png,jpeg');
             // $form->multipleSelect()->options();
             // $form->checkbox()->options();
