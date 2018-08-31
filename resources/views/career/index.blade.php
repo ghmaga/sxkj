@@ -10,53 +10,24 @@
 		and standard experiment; to export universal experiment platform sets and standard requirements and generate replicable innovative solutions; and to align with international <br>
 		experiment platforms.
 	</div>
-	<h2 class="title">POSITION</h2>
+	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'POSITION' : '职位' }}</h2>
 	<ul class="jobs">
+		@foreach($jobs as $val)
 		<li>
-			<strong>Sales</strong>
-			<div class="text-center">Position Requirements</div>
-			<br>
-			1.Can communicate with foreign colleagues in both spoken and written English smoothly. <br>
-			<br>
-			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
-			<br>
-			3.Expert with various network technologies, have basic computer network knowledges. <br>
-			<br>
-			4.Familiar with mainstream cloud services and technologies and having experience in monitoring / managing those services. <br>
+			<strong>
+				@if(Session::get('locale') == 'en')
+					{{ $val['en_title'] }}
+				@else
+					{{ $val['title'] }}
+				@endif
+			</strong>
+			@if(Session::get('locale') == 'en')
+				{!! $val['en_body'] !!}
+			@else
+				{!! $val['body'] !!}
+			@endif
 		</li>
-		<li>
-			<strong>Sales</strong>
-			<div class="text-center">Position Requirements</div>
-			<br>
-			1.Can communicate with foreign colleagues in both spoken and written English smoothly. <br>
-			<br>
-			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
-			<br>
-			3.Expert with various network technologies, have basic computer network knowledges. <br>
-			<br>
-			4.Familiar with mainstream cloud services and technologies and having experience in monitoring / managing those services. <br>
-		</li>
-		<li>
-			<strong>Sales</strong>
-			<div class="text-center">Position Requirements</div>
-			<br>
-			1.Can communicate with foreign colleagues in both spoken and written English smoothly. <br>
-			<br>
-			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
-			<br>
-		</li>
-		<li>
-			<strong>Sales</strong>
-			<div class="text-center">Position Requirements</div>
-			<br>
-			1.Can communicate with foreign colleagues in both spoken and written English smoothly. <br>
-			<br>
-			2.Expert with Apple OS X, imaging, provisioning, management and security, working experience in Apple Store would be a plus. <br>
-			<br>
-			3.Expert with various network technologies, have basic computer network knowledges. <br>
-			<br>
-			4.Familiar with mainstream cloud services and technologies and having experience in monitoring / managing those services. <br>
-		</li>
+		@endforeach
 	</ul>
 	<a href="mailto:HR@sinsitech.com" class="career-contact">Please contact with our HR@sinsitech.com</a>
 </div>

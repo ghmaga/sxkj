@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Slide;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
@@ -11,6 +12,7 @@ class CareerController extends Controller
     {
     	//获取首页轮换图id=4
         $slides = Slide::where('parent_id', 4)->get();
-    	return view('career.index', compact('slides'));
+        $jobs = Job::all();
+    	return view('career.index', compact('slides', 'jobs'));
     }
 }
