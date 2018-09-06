@@ -9,11 +9,9 @@ use App\Models\ProductSku;
 use App\Models\ProductFile;
 use App\Models\ProductVideo;
 use Illuminate\Http\Request;
-use Sleimanx2\Plastic\Searchable;
 
 class ProductController extends Controller
 {
-    use Searchable;
     public function index(Request $request)
     {
         //获取产品轮换图id=0
