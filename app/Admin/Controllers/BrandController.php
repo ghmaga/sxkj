@@ -98,7 +98,7 @@ class BrandController extends Controller
             $form->image('image', '厂牌Logo')->rules('mimes:gif,jpg,png,jpeg');
             // $form->multipleSelect()->options();
             // $form->checkbox()->options();
-            $form->listbox('product_id', '产品关联')->options(Product::all()->pluck('title', 'id'));
+            // $form->listbox('product_id', '产品关联')->options(Product::all()->pluck('title', 'id'));
             $form->editor('description', '描述');
             $form->editor('en_description', '英文描述');
             $form->text('order', '排序');

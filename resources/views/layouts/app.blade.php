@@ -17,9 +17,15 @@
 <script src="/js/website.js"></script>
 </head>
 
-<body>
-
-<body>
+<body ontouchstart>
+<!-- <div class="layer"></div>
+<form class="login">
+	<img src="/image/login.png" alt="">
+	<input type="text" class="text" placeholder="USER">
+	<input type="password" class="text" placeholder="PASSWORD">
+	<label><input type="checkbox" /> remember me</label>
+	<input type="submit" value="LOGIN" />
+</form> -->
 	@include('layouts._header')
       @yield('content')
     @include('layouts._footer')

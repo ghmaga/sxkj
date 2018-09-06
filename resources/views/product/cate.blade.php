@@ -19,23 +19,25 @@
 		<a href="{{ route('product.cate', 1) }}"><span class="product-tag-icon"><img src="/image/p8.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Cell Biology' : '细胞生物学' }}</a>
 		<a href="{{ route('product.cate', '-1') }}"><span class="product-tag-icon"><img src="/image/p0.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'View all Products' : '所有产品' }}</a>
 	</div>
-	<h2 class="title">GYROS</h2>
-	<div class="product-item">
-		@foreach($catetories as $catetory)
+	@foreach($catetories as $val)
+		<h2 class="title">{{ (Session::get('locale') == 'en') ? $val['en_title'] : $val['title'] }}</h2>
+		<div class="product-item">
+		
 			<dl>
-				<dt><img src="/uploads/{{ $catetory['image'] }}" alt=""></dt>
+				<dt><img src="/uploads/{{ $val['image'] }}" alt=""></dt>
 				<dd>
 					<ul class="product-item-point">
 						@if(Session::get('locale') == 'en')
-							{!! $catetory['en_body'] !!}
+							{!! $val['en_body'] !!}
 						@else
-							{!! $catetory['body'] !!}
+							{!! $val['body'] !!}
 						@endif
 					</ul>
-					<a href="{{ route('product.show', $catetory['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
+					<a href="{{ route('product.show', $val['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
 				</dd>
 			</dl>
-		@endforeach
-	</div>
+		</div>
+	@endforeach	
+	{{ $catetories->links() }}
 </div>
 @stop

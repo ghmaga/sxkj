@@ -8,7 +8,7 @@ class ProductVideo extends Model
 {
     protected $table = 'product_video';
 
-    protected $fillable = ['filename', 'en_filename',  'video'];
+    protected $fillable = ['filename', 'en_filename',  'video', 'order'];
 
     public function product()
     {

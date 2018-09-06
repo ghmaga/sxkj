@@ -29,6 +29,6 @@
 		</li>
 		@endforeach
 	</ul>
-	<a href="mailto:HR@sinsitech.com" class="career-contact">Please contact with our HR@sinsitech.com</a>
+	<a href="mailto:HR@sinsitech.com" class="career-contact">{{ (Session::get('locale') == 'en') ? 'Please contact with our HR@sinsitech.com' : '请发送简历至HR@sinsitech.com' }}</a>
 </div>
 @stop

@@ -40,16 +40,23 @@
 			@endforeach
 		</ul>
 	@endif
-	@if(count($files))
+	@if (Auth::check())
+		@if(count($files))
+			<h2 class="title">{{ (Session::get('locale') == 'en') ? 'DOWNLOAD' : '下载' }}</h2>
+			<ul class="download">
+				<li><span>{{ (Session::get('locale') == 'en') ? 'Categroy' : '分类' }}</span><span>{{ (Session::get('locale') == 'en') ? 'File Name' : '文件名称' }}</span><span>{{ (Session::get('locale') == 'en') ? 'Download' : '下载' }}</span></li>
+				@foreach($files as $val)
+					<li>
+						<span>{{ (Session::get('locale') == 'en') ? $val['en_catename'] : $val['catename'] }}</span><span>{{ (Session::get('locale') == 'en') ? $val['en_filename'] : $val['filename'] }}</span><span><a href="/uploads/{{ $val['file'] }}" class="download-link"></a></span>
+					</li>
+				@endforeach
+			</ul>
+		@endif
+	@else
 		<h2 class="title">{{ (Session::get('locale') == 'en') ? 'DOWNLOAD' : '下载' }}</h2>
-		<ul class="download">
-			<li><span>{{ (Session::get('locale') == 'en') ? 'Categroy' : '分类' }}</span><span>{{ (Session::get('locale') == 'en') ? 'File Name' : '文件名称' }}</span><span>{{ (Session::get('locale') == 'en') ? 'Download' : '下载' }}</span></li>
-			@foreach($files as $val)
-				<li>
-					<span>{{ (Session::get('locale') == 'en') ? $val['en_catename'] : $val['catename'] }}</span><span>{{ (Session::get('locale') == 'en') ? $val['en_filename'] : $val['filename'] }}</span><span><a href="/uploads/{{ $val['file'] }}" class="download-link"></a></span>
-				</li>
-			@endforeach
-		</ul>
+			<ul class="download">
+				<li><h1>请<a href="{{ route('login') }}">登录</a>下载文件</h1></li>
+			</ul>
 	@endif
 </div>
 @stop

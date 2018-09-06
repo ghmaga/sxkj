@@ -9,7 +9,7 @@ class ProductFile extends Model
     protected $table = 'product_file';
 
 
-    protected $fillable = ['filename', 'en_filename', 'catename', 'en_catename', 'file'];
+    protected $fillable = ['filename', 'en_filename', 'catename', 'en_catename', 'file', 'order'];
 
     public function product()
     {

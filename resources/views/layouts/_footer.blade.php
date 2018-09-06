@@ -26,11 +26,12 @@ new Swiper('#swiper-top', {
 	nextButton: '.swiper-button-next',
 	prevButton: '.swiper-button-prev'
 });
-new Swiper('#swiper-top', {
-	loop: true,
-	autoplay: 4000,
-	nextButton: '.swiper-button-next',
-	prevButton: '.swiper-button-prev'
+new Swiper('#swiper-brands', {
+	slidesPerView: 4,
+	slidesPerColumn: 2,
+	spaceBetween: 22,
+	nextButton: '.swiper-brands-button-next',
+	prevButton: '.swiper-brands-button-prev'
 });
 $(function(){
 	if(iphone || android || ipad){
@@ -43,6 +44,16 @@ $(function(){
 	});
 	$('.menu-link').click(function(event) {
 		$('.navigation').toggle();
+	});
+	$('.prodroplist a:not(".viewall")').mouseover(function(event) {
+		$('.prodroplist-image').filter(':visible').hide();
+		$('.prodroplist-image').eq($(this).index()).show();
+	});
+	$('.user').click(function(event) {
+		$('.layer, .login').show();
+	});
+	$('.layer').click(function(event) {
+		$('.layer, .login').hide();
 	});
 });
 if($('.content-home').size() == 1){

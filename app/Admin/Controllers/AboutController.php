@@ -93,9 +93,9 @@ class AboutController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '标题')->rules('required');
             //$form->image('image', '图片')->rules('mimes:gif,jpg,png,jpeg');
-            $form->text('en_title', '英文标题')->rules('required');
-            $form->editor('body', '内容')->rules('required');
-            $form->editor('en_body', '英文内容')->rules('required');
+            $form->text('en_title', '英文标题');
+            $form->editor('body', '内容');
+            $form->editor('en_body', '英文内容');
 
 
             // $form->display('created_at', 'Created At');

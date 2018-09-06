@@ -109,13 +109,14 @@ class SlideController extends Controller
             $form->display('id', 'ID');
            
             $form->select('parent_id', '所属栏目')->options(Category::where(['parent_id' => 1])->pluck('name'));
-            $form->image('image', '图片上传')->rules('mimes:gif,jpg,png,jpeg');
+            $form->image('image', '图片上传');
+            $form->image('en_image', '英文图片上传');
 
-            $form->text('name', '图片标题')->rules('required|min:3');
-            $form->text('en_name', '英文图片标题')->rules('required');
-            $form->text('description', '图片描述')->rules('required');
-            $form->text('en_description', '英文图片描述')->rules('required');
-            $form->url('link', '图片链接')->rules('required');
+            $form->text('name', '图片标题');
+            $form->text('en_name', '英文图片标题');
+            $form->text('description', '图片描述');
+            $form->text('en_description', '英文图片描述');
+            $form->url('link', '图片链接');
             // $form->tags('keywords');
         });
     }

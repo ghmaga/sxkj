@@ -176,7 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         //Intervention\Image\ImageServiceProvider::class
 
     ],

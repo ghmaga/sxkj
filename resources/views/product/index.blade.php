@@ -19,23 +19,24 @@
 		<a href="{{ route('product.cate', 1) }}"><span class="product-tag-icon"><img src="/image/p8.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'Cell Biology' : '细胞生物学' }}</a>
 		<a href="{{ route('product.cate', '-1') }}"><span class="product-tag-icon"><img src="/image/p0.png" alt=""></span>{{ (Session::get('locale') == 'en') ? 'View all Products' : '所有产品' }}</a>
 	</div>
-	<h2 class="title">GYROS</h2>
-	<div class="product-item">
-		@foreach($pushproduct as $product)
-			<dl>
-				<dt><img src="/uploads/{{ $product['image'] }}" alt=""></dt>
-				<dd>
-					<ul class="product-item-point">
-						@if(Session::get('locale') == 'en')
-							{!! $product['en_body'] !!}
-						@else
-							{!! $product['body'] !!}
-						@endif
-					</ul>
-					<a href="{{ route('product.show', $product['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
-				</dd>
-			</dl>
-		@endforeach
-	</div>
+	@foreach($products as $val)
+		<h2 class="title">{{ (Session::get('locale') == 'en') ? $val['en_title'] : $val['title'] }}</h2>
+		<div class="product-item">
+			
+				<dl>
+					<dt><img src="/uploads/{{ $val['image'] }}" alt=""></dt>
+					<dd>
+						<ul class="product-item-point">
+							@if(Session::get('locale') == 'en')
+								{!! $val['en_body'] !!}
+							@else
+								{!! $val['body'] !!}
+							@endif
+						</ul>
+						<a href="{{ route('product.show', $val['id']) }}" class="more1">{{ (Session::get('locale') == 'en' ? 'LEARN MORE' : '更多' ) }}</a>
+					</dd>
+				</dl>
+		</div>
+	@endforeach
 </div>
 @stop

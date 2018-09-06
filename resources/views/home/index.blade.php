@@ -2,7 +2,7 @@
 @section('title', 'Home')
 @section('content')
 
-<div class="container"><h2 class="title">ABOUT ALL</h2></div>
+<div class="container"><h2 class="title">{{ (Session::get('locale') == 'en') ?  'ABOUT ALL' : '关于我们' }}</h2></div>
 <div class="special-box">
 	<div class="special-left"></div>
 	<div class="container special-content">
@@ -12,7 +12,7 @@
 			<b>Science First.</b> It’s the difference between leading and following.
 			<div class="text-right"><a href="{{ route('about') }}" class="more1">{{ (Session::get('locale') == 'en') ?  'MORE ABOUT SINSITECH' : '关于我们' }}</a></div>
 		</div>
-		<h2 class="title">POPULAR PORDUCT</h2>
+		<h2 class="title">{{ (Session::get('locale') == 'en') ?  'POPULAR PORDUCT' : '产品' }}</h2>
 		<a href="javascript:;" class="swiper-home-button-prev"></a>
 		<a href="javascript:;" class="swiper-home-button-next"></a>
 		<div class="swiper-container swiper-home" id="swiper-home">
@@ -21,7 +21,7 @@
 				<a href="{{ route('product.show', $product['id']) }}" class="swiper-slide">
 					<div class="popular-title color-white">{{ (Session::get('locale') == 'en') ?  $product['en_title'] : $product['title'] }}</div>
 					<div class="popular-image"><img src="uploads/{{ $product['image'] }}" alt=""></div>
-					<div class="more2">READ MORE</div>
+					<div class="more2">{{ (Session::get('locale') == 'en') ?  'READ MORE' : '了解更多' }}</div>
 				</a>
 				@endforeach
 			</div>
