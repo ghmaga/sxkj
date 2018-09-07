@@ -70,16 +70,16 @@ input, textarea, button { border-radius:0; }
 			.prodroplist a { display: block; color: #FFF; }
 			.prodroplist a.viewall { font-size: 18px; margin-top: 28px; }
 	.prodrop-right { overflow: hidden; }
-		.prodroplist-image { padding: 30px; }
-			.prodroplist-image dl { display: none; height: 304px; }
+		.prodroplist-image { padding: 30px 30px 0; display: none; }
+			.prodroplist-image dl { height: 304px; display: flex; }
 				.prodroplist-image dt { width: 290px; padding-right: 30px; float: left; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; align-items: center; }
 					.prodroplist-image img { max-height: 80%; max-width: 100%; }
-					.prodroplist-image p { font-size: 18px; color: #000; }
+					.prodroplist-image p { text-align: center; overflow: hidden; width: 100%; text-overflow: ellipsis; white-space: nowrap; font-size: 18px; color: #000; }
 				.prodroplist-image dd { display: flex; justify-content: center; align-items: center; overflow: hidden; }
-			.prodroplist-image dl:nth-of-type(1) { display: flex; }
+			.prodroplist-image:nth-of-type(1) { display: block; }
 		.recommend { line-height: 140px; border-top: 1px solid #E5E5E5; padding-left: 50px; }
-			.recommend strong { font-size: 16px; color: #000; }
-			.recommend strong, .recommend a { margin-right: 50px; }
+			.recommend strong, .recommend a { margin-right: 20px; display: inline-block; vertical-align: top; max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+			.recommend strong { font-size: 16px; color: #000; max-width: none; }
 	.swiper-brands { position: relative; padding: 30px 0; }
 		#swiper-brands { max-width: 930px; margin: auto; }
 			.swiper-brands .swiper-slide { border: 1px solid #F2F2F2; border-radius: 3px; overflow: hidden; box-sizing: border-box; background-color: #FCFCFC; }
