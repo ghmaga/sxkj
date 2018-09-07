@@ -54,27 +54,28 @@ input, textarea, button { border-radius:0; }
 	.top { font-family: Arial; font-size: 14px; text-align: right; background-color: #445C7B; border-bottom: 1px solid #E0DFDF; line-height: 30px; }
 		.top a { display: inline-block; vertical-align: top; }
 		.user { background: url(../image/user.png) no-repeat 0 50%; padding-left: 21px; margin-right: 50px; }
-	.header > .container { padding: 30px 20px 0; }
+	.header > .container { padding: 21px 20px 0; }
 		.logo { float: left; margin: -6px 0 0; }
 		.search { display: none; float: right; margin-top: 3px; width: 42px; height: 42px; background: url(../image/search.png); background-size: cover; }
 		.navigation { float: right; line-height: 42px; margin: 5px 0 0; font-size: 15px; font-weight: bold; }
-			.navigation > li { float: left; padding: 0 18px 40px; }
+			.navigation > li { float: left; padding: 0 18px 32px; }
 				.navigation > li:hover .dropmenu { visibility: visible; }
 			.navigation > li:nth-last-of-type(1) { padding-right: 0; }
-.dropmenu { visibility: hidden; font-weight: normal; position: absolute; width: 100%; box-shadow: 0 4px 4px rgba(0,0,0,0.1); left: 50%; top: 148px; transform: translateX(-50%); background-color: #FFF; }
+.dropmenu { visibility: hidden; font-weight: normal; position: absolute; width: 100%; box-shadow: 0 4px 4px rgba(0,0,0,0.1); left: 50%; top: 131px; transform: translateX(-50%); background-color: #FFF; }
+	.dropmenu:before { content: ''; position: absolute; height: 1px; display: block; background-color: #DDD; box-shadow: 0 1px 3px rgba(0,0,0,0.3); width: 100%; }
 	.prodrop-left { background-color: #8F9DB0; width: 355px; float: left; box-sizing: border-box; padding: 22px 14px 19px; }
 		.searchform { background-color: #A9B4C2; height: 64px; width: 327px; border-radius: 32px; }
 			.searchform input[type=text] { width: 220px; margin-right: 8px; font-size: 18px; line-height: 64px; padding: 0 0 0 30px; color: #445c7b; background-color: transparent; border: none; float: left; }
 			.searchform input[type=submit] { width: 35px; height: 33px; background: url(../image/searchform.png); padding: 0; border: none; float: left; margin-top: 16px; cursor: pointer; }
-		.prodroplist { line-height: 36px; font-size: 16px; padding: 0 10px; margin-top: 48px; }
+		.prodroplist { line-height: 36px; font-size: 16px; padding: 0 10px; margin-top: 28px; }
 			.prodroplist a { display: block; color: #FFF; }
-			.prodroplist a.viewall { font-size: 18px; margin-top: 28px; }
+			.prodroplist a.viewall { font-size: 18px; margin-top: 23px; }
 	.prodrop-right { overflow: hidden; }
 		.prodroplist-image { padding: 30px 30px 0; display: none; }
-			.prodroplist-image dl { height: 304px; display: flex; }
-				.prodroplist-image dt { width: 290px; padding-right: 30px; float: left; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; align-items: center; }
+			.prodroplist-image dl { height: 309px; display: flex; }
+				.prodroplist-image dt { width: 290px; padding-right: 30px; float: left; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 					.prodroplist-image img { max-height: 80%; max-width: 100%; }
-					.prodroplist-image p { text-align: center; overflow: hidden; width: 100%; text-overflow: ellipsis; white-space: nowrap; font-size: 18px; color: #000; }
+					.prodroplist-image p { text-align: center; line-height: 22px; font-size: 18px; color: #000; }
 				.prodroplist-image dd { display: flex; justify-content: center; align-items: center; overflow: hidden; }
 			.prodroplist-image:nth-of-type(1) { display: block; }
 		.recommend { line-height: 140px; border-top: 1px solid #E5E5E5; padding-left: 50px; }
@@ -103,9 +104,9 @@ input, textarea, button { border-radius:0; }
 	.login input.text[type=password] { background-image: url(../image/password.png); background-position: 20px 50%; }
 	.login label { display: block; margin-top: 44px; }
 	.login input[type=submit] { display: block; line-height: 56px; background-color: #445C7B; color: #FFF; border: none; font-size: 18px; width: 100%; cursor: pointer; margin-top: 25px; }
-.swiper-top { position: fixed; top: 148px; left: 0; width: 100%; }
+.swiper-top { position: fixed; top: 131px; left: 0; width: 100%; }
 	.swiper-top .swiper-slide { height: 370px; background-size: cover; background-position: 0 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-		.swiper-top-home .swiper-slide { height: 698px; background-position: 50%; }
+		.swiper-top-home .swiper-slide { height: 550px; background-position: 50%; }
 		.swiper-top .swiper-slide p { width: 100%; font-size: 50px; line-height: 100px; }
 	.swiper-top .swiper-button-next, .swiper-top .swiper-button-prev { transition: background 0.3s; left: 0; width: 80px; height: 80px; margin-top: -40px; background: rgba(255,255,255,0.2); }
 		.swiper-top .swiper-button-next:after, .swiper-top .swiper-button-prev:after { transition: opacity 0.3s; content:''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../image/arrow-left.png) 50% no-repeat; opacity: 0.3; }
@@ -113,8 +114,8 @@ input, textarea, button { border-radius:0; }
 		.swiper-top .swiper-button-next:after { background-image: url(../image/arrow-right.png); }
 	.swiper-top .swiper-button-next:hover, .swiper-top .swiper-button-prev:hover { background: #1DD2AF; }
 		.swiper-top .swiper-button-next:hover:after, .swiper-top .swiper-button-prev:hover:after { opacity: 1; }
-.content { margin-top: 518px; padding-top: 40px; background-color: #FFF; position: relative; z-index: 98; }
-	.content-home { margin-top: 830px; padding-top: 64px; background-color: #F2F2F2; }
+.content { margin-top: 501px; padding-top: 40px; background-color: #FFF; position: relative; z-index: 98; }
+	.content-home { margin-top: 681px; padding-top: 64px; background-color: #F2F2F2; }
 	.special-box { overflow: hidden; }
 	.title { font-family: 'bangla_mnregular', 'PingFangSC-Regular', 'Microsoft YaHei Light', '微软雅黑', sans-serif; font-size: 30px; color: #142E4F; line-height: 42px; }
 		.color-white { color: #FFF; }
@@ -228,11 +229,12 @@ input, textarea, button { border-radius:0; }
 			.more4 { position: absolute; right: 30px; bottom: 30px; border-radius: 3px; background-color: #445C7B; line-height: 30px; padding: 0 20px; color: #FFF; }
 			.more4:hover { background-color: #1DD2AF; color: #FFF; }
 .brand-page { text-align: right; font-size: 0; margin: 0 0 57px; }
-	.brand-page a, .brand-page strong { text-align: center; margin-left: 7px; width: 34px; line-height: 34px; display: inline-block; vertical-align: top; font-size: 16px; }
-	.brand-page a:hover, .brand-page strong { background-color: #003677; color: #FFF; }
+	.brand-page li { display: inline-block; }
+	.brand-page a, .brand-page span { text-align: center; margin-left: 7px; width: 34px; line-height: 34px; display: inline-block; vertical-align: top; font-size: 16px; }
+	.brand-page a:hover { background-color: #003677; color: #FFF; }
 .product-list { border-top: 1px solid #EBEBEB; margin: 40px 0; padding: 40px 0 24px; overflow: hidden; }
 	.product-list a { float: left; width: 32.3%; padding: 36px 27px 27px; box-sizing: border-box; margin: 0 1.55% 1.55% 0; background-color: #FCFCFC; border: 1px solid #DCDCDC; }
-		.product-list-title { text-align: center; font-size: 30px; line-height: 30px; }
+		.product-list-title { text-align: center; font-size: 20px; line-height: 24px; text-overflow: ellipsis; white-space: nowrap; width: 100%; overflow: hidden; }
 		.product-list-image { display: flex; flex-direction: column; justify-content: center; text-align: center; height: 307px; box-sizing: border-box; padding: 20px 0; }
 			.product-list img { max-width: 100%; max-height: 100%; }
 		.more5 { transition: background-color 0.2s; background: url(../image/arrow-right3.png) no-repeat calc(100% - 30px) 50% #445C7B; color: #FFF; line-height: 80px; text-indent: 24px; }
@@ -330,7 +332,7 @@ input, textarea, button { border-radius:0; }
 			.brand-item dd { padding: 10px; display: block; }
 			.more4 { position: static; padding: 0 10px; display: inline-block; vertical-align: top; line-height: 20px; font-size: 10px; }
 	.brand-page { margin-bottom: 20px; }
-		.brand-page a, .brand-page strong { width: 17px; height: 17px; line-height: 17px; font-size: 8px; }
+		.brand-page a, .brand-page span { width: 17px; height: 17px; line-height: 17px; font-size: 8px; }
 	.product-list { margin: 20px 0; padding: 20px 0 12px; }
 		.product-list a { display: block; width: 100%; padding: 18px 10px 10px; }
 			.product-list-title { font-size: 15px; line-height: 15px; }
