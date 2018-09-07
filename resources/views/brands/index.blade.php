@@ -10,11 +10,6 @@
 	</div>
 	<ul class="brand-list">
 		@foreach($brands as $val)
-				@if(Session::get('locale') == 'en')
-					{{ $val['en_title'] }}
-				@else
-					{{ $val['title'] }}
-				@endif
 				<li>
 					<dl class="brand-item">
 						<dt><img src="/uploads/{{ $val['image'] }}" alt=""></dt>
