@@ -52,8 +52,9 @@ input, textarea, button { border-radius:0; }
 .header { position: fixed; left: 0; top: 0; width: 100%; background-color: #FFF; box-shadow: 0 0 4px rgba(0,0,0,0.3); z-index: 99; }
 	.container { max-width: 1170px; margin-left: auto; margin-right: auto; padding: 0 20px; }
 	.top { font-family: Arial; font-size: 14px; text-align: right; background-color: #445C7B; border-bottom: 1px solid #E0DFDF; line-height: 30px; }
-		.top a { display: inline-block; vertical-align: top; }
-		.user { background: url(../image/user.png) no-repeat 0 50%; padding-left: 21px; margin-right: 50px; }
+		.top a { display: inline-block; vertical-align: top; margin-right: 50px; }
+			.user { background: url(../image/user.png) no-repeat 0 50%; padding-left: 21px; }
+		.top a:nth-last-of-type(1) { margin-right: 0; }
 	.header > .container { padding: 21px 20px 0; }
 		.logo { float: left; margin: -6px 0 0; }
 		.search { display: none; float: right; margin-top: 3px; width: 42px; height: 42px; background: url(../image/search.png); background-size: cover; }
@@ -145,6 +146,9 @@ input, textarea, button { border-radius:0; }
 	.footer-item { width: 294px; margin-top: 40px; }
 		.footer-item p { color: #1DD2AF; font-size: 25px; line-height: 29px; }
 		.contact { width: 164px; line-height: 48px; border: 1px solid #1DD2AF; border-radius: 50px; display: inline-block; vertical-align: top; text-align: center; margin-top: 70px; }
+			.contact strong { font-weight: normal; display: none; }
+			.contact:hover span { display: none; }
+			.contact:hover strong { display: inline; }
 		.footer-item.float-right .color-white { margin: 16px 0 58px; }
 		.share { height: 22px; background: url(../image/share.png) no-repeat; }
 			.share a { width: 22px; height: 22px; float: left; margin-right: 21px; }

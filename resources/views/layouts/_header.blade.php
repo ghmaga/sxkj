@@ -1,9 +1,10 @@
 <div class="header">
 	<div class="top">
 		<div class="container">
+			<a href="tel:86-010-57206579">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206579</a>
 			@guest
-				<!-- <a href="javascript:;" class="color-white user">LOGIN</a> -->
-				<a href="{{ route('login') }}" class="color-white user">LOGIN</a>
+				<!-- <a href="javascript:;" class="color-white user login-btn">LOGIN</a> -->
+				<a href="{{ route('login') }}" class="color-white user login-btn">LOGIN</a>
 	        {{-- <li><a href="{{ route('login') }}">Login</a></li>--}}
 	        {{-- <li><a href="{{ route('register') }}">Register</a></li>--}}
             @else

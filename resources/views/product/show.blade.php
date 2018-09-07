@@ -2,6 +2,19 @@
 @section('title', 'Product')
 
 @section('content')
+@if(Session::get('locale') == 'en')
+<div class="tab">
+	<a href="#0" class="hover">zhaiyao</a>
+	<a href="#1">技术规格</a>
+	<a href="#2">DOWNLOAD</a>
+</div>
+@else
+<div class="tab">
+	<a href="#0" class="hover">产品摘要</a>
+	<a href="#1">技术规格</a>
+	<a href="#2">相关下载</a>
+</div>
+@endif
 <div class="container">
 	<div class="tags">
 		<a href="{{ route('home')}}">{{ (Session::get('locale') == 'en') ? 'Home' : '主页' }}</a>
@@ -10,7 +23,7 @@
 		&gt;
 		<a href="#">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</a>
 	</div>	
-	<h2 class="title">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</h2>
+	<h2 class="title" id="0" name="0">{{ (Session::get('locale') == 'en') ? $product->en_title : $product->title }}</h2>
 	@if(count($skus))
 		<div class="product-detail">
 			@foreach($skus as $sku)
@@ -31,7 +44,7 @@
 		</div>
 	@endif
 	@if(count($videos))
-		<h2 class="title">{{ (Session::get('locale') == 'en') ? 'VIDEO' : '视频' }}</h2>
+		<h2 class="title" id="1" name="1">{{ (Session::get('locale') == 'en') ? 'VIDEO' : '视频' }}</h2>
 		<ul class="video">
 			@foreach($videos as $val)
 				<li>
@@ -42,7 +55,7 @@
 	@endif
 
 	@if(count($files))
-		<h2 class="title">{{ (Session::get('locale') == 'en') ? 'DOWNLOAD' : '下载' }}</h2>
+		<h2 class="title" id="2" name="2">{{ (Session::get('locale') == 'en') ? 'DOWNLOAD' : '下载' }}</h2>
 		<ul class="download">
 			<li><span>{{ (Session::get('locale') == 'en') ? 'Categroy' : '分类' }}</span><span>{{ (Session::get('locale') == 'en') ? 'File Name' : '文件名称' }}</span><span>{{ (Session::get('locale') == 'en') ? 'Download' : '下载' }}</span></li>
 			@foreach($files as $val)
@@ -59,4 +72,12 @@
 		</ul>
 	@endif
 </div>
+<script type="text/javascript">
+$(function(){
+	$('.tab a').click(function(event) {
+		$(this).siblings('.hover').removeClass('hover');
+		$(this).addClass('hover');
+	});
+})
+</script>
 @stop

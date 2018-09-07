@@ -1,12 +1,22 @@
 	<div class="footer">
 		<div class="container clear">
 			<div class="footer-item float-left">
+				@if(Session::get('locale') == 'en')
 				<p>GET IN TOUCH <br><br>We want to hear from you.</p>
-				<a href="#" class="contact color-white">CONTACT US</a>
+				<a href="tel:86-010-57206579" class="contact color-white"><span>CONTACT US</span><strong>86-010-57206579</strong></a>
+				@else
+				<p>保持联系<br><br>我们希望听到您的声音</p>
+				<a href="tel:86-010-57206579" class="contact color-white"><span>联系我们</span><strong>86-010-57206579</strong></a>
+				@endif
 			</div>
 			<div class="footer-item float-right">
+				@if(Session::get('locale') == 'en')
 				<p>Address</p>
-				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:wangy@sinsitech.com" class="color-white">E-mail: wangy@sinsitech.com</a></div>
+				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:service@sinsitech.com" class="color-white">E-mail: service@sinsitech.com</a></div>
+				@else
+				<p>联系</p>
+				<div class="color-white">地址：北京市朝阳区和平街13区中化地厦2层<br><a href="mailto:service@sinsitech.com" class="color-white">邮箱：service@sinsitech.com</a></div>
+				@endif
 				<div class="share">
 					<a href="#"></a>
 					<a href="#"></a>
@@ -21,14 +31,14 @@
 </div>
 <script>
 if($('#swiper-top .swiper-slide').length > 1){
- new Swiper('#swiper-top', {
-  loop: true,
-  autoplay: 4000,
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev'
- });
+	new Swiper('#swiper-top', {
+		loop: true,
+		autoplay: 4000,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev'
+	});
 }else{
- $('#swiper-top .swiper-button-prev, #swiper-top .swiper-button-next').hide();
+	$('#swiper-top .swiper-button-prev, #swiper-top .swiper-button-next').hide();
 }
 new Swiper('#swiper-brands', {
 	slidesPerView: 4,
@@ -58,6 +68,10 @@ $(function(){
 	});
 	$('.layer').click(function(event) {
 		$('.layer, .login').hide();
+	});
+	$('.nologin').click(function(event) {
+		$('.login-btn').trigger('click');
+		return false;
 	});
 });
 if($('.content-home').size() == 1){
