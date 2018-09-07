@@ -4,15 +4,15 @@
 @section('content')
 @if(Session::get('locale') == 'en')
 <div class="tab">
-	<a href="#0" class="hover">zhaiyao</a>
-	<a href="#1">技术规格</a>
-	<a href="#2">DOWNLOAD</a>
+	<a href="#0" class="hover">Description</a>
+	<a href="#1">Videos</a>
+	<a href="#2">Downloads</a>
 </div>
 @else
 <div class="tab">
-	<a href="#0" class="hover">产品摘要</a>
-	<a href="#1">技术规格</a>
-	<a href="#2">相关下载</a>
+	<a href="#0" class="hover">产品详情</a>
+	<a href="#1">视频</a>
+	<a href="#2">文件下载</a>
 </div>
 @endif
 <div class="container">
