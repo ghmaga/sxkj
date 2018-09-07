@@ -72,12 +72,4 @@
 		</ul>
 	@endif
 </div>
-<script type="text/javascript">
-$(function(){
-	$('.tab a').click(function(event) {
-		$(this).siblings('.hover').removeClass('hover');
-		$(this).addClass('hover');
-	});
-})
-</script>
 @stop
