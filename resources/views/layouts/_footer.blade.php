@@ -20,12 +20,16 @@
 	</div>
 </div>
 <script>
-new Swiper('#swiper-top', {
-	loop: true,
-	autoplay: 4000,
-	nextButton: '.swiper-button-next',
-	prevButton: '.swiper-button-prev'
-});
+if($('#swiper-top .swiper-slide').length > 1){
+ new Swiper('#swiper-top', {
+  loop: true,
+  autoplay: 4000,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev'
+ });
+}else{
+ $('#swiper-top .swiper-button-prev, #swiper-top .swiper-button-next').hide();
+}
 new Swiper('#swiper-brands', {
 	slidesPerView: 4,
 	slidesPerColumn: 2,

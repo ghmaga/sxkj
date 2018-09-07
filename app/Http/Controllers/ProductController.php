@@ -49,9 +49,9 @@ class ProductController extends Controller
                                 ->orWhere('en_description', 'like', $like);
                         });
                 });
-                $products = $builder->orderBy('order', 'desc')->paginate(10);
+                $products = $builder->orderBy('order', 'desc')->paginate(5);
             } else {
-                $products = Product::where('recommend', 1)->orderBy('order', 'desc')->limit(2)->get();
+                $products = Product::where('recommend', 1)->orderBy('order', 'desc')->paginate(5);
             }     
          // dd($products);
 
@@ -87,9 +87,9 @@ class ProductController extends Controller
     {
         if($cate == '-1')
         {
-            $catetories = Product::orderBy('order', 'desc')->paginate(10);
+            $catetories = Product::orderBy('order', 'desc')->paginate(5);
         }else{
-            $catetories = Product::where('parent_id','like','%'.$cate.'%')->orderBy('order', 'desc')->paginate(10);
+            $catetories = Product::where('parent_id','like','%'.$cate.'%')->orderBy('order', 'desc')->paginate(5);
         }
         $slides = Slide::where('parent_id', 0)->orderBy('order', 'desc')->get();
         $brands = Brand::orderBy('order', 'desc')->get();

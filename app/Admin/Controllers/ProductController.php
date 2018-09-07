@@ -122,6 +122,7 @@ class ProductController extends Controller
             $form->hasMany('video', '视频', function (Form\NestedForm $form) {
                 $form->text('filename', '视频名称')->rules('required');
                 $form->text('en_filename', '视频英文名称')->rules('required');
+                $form->image('image', '视频封面图')->help('请上传16:9图片');
                 $form->file('video', '视频上传');
             });
             $states = [

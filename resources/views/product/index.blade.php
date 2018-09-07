@@ -38,5 +38,6 @@
 				</dl>
 		</div>
 	@endforeach
+	{{ $products->links() }}
 </div>
 @stop

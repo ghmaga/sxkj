@@ -32,8 +32,8 @@
 					</dd>
 				</dl>
 			</li>
-	@endforeach
 	</ul>
+	@endforeach
 	<div class="brand-page">
 		{{ $brands->links() }}
 	<!-- <a href="#">1</a>
