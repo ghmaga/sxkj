@@ -12,10 +12,10 @@
 			<div class="footer-item float-right">
 				@if(Session::get('locale') == 'en')
 				<p>Address</p>
-				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:service@sinsitech.com" class="color-white">E-mail: service@sinsitech.com</a></div>
+				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:service@sinsitech.com" class="color-white">E-mail: service@sinsitech.com</a><br><a href="tel:400-6876366" class="color-white">Service: 400-6876366</a></div>
 				@else
 				<p>联系</p>
-				<div class="color-white">地址：北京市朝阳区和平街13区中化地厦2层<br><a href="mailto:service@sinsitech.com" class="color-white">邮箱：service@sinsitech.com</a></div>
+				<div class="color-white">地址：北京市朝阳区和平街13区中化地厦2层<br><a href="mailto:service@sinsitech.com" class="color-white">邮箱：service@sinsitech.com</a><br><a href="tel:400-6876366" class="color-white">客服：400-6876366</a></div>
 				@endif
 				<div class="share">
 					<a href="#"></a>
@@ -64,7 +64,7 @@ $(function(){
 		$('.prodroplist-image').eq($(this).index()).show();
 	});
 	$('.user').click(function(event) {
-		$('.layer, .login').show();
+		$('.layer, #loginbox').show();
 	});
 	$('.layer').click(function(event) {
 		$('.layer, .login').hide();
@@ -72,6 +72,14 @@ $(function(){
 	$('.nologin').click(function(event) {
 		$('.login-btn').trigger('click');
 		return false;
+	});
+	$('.forgot-btn').click(function(event) {
+		$(this).parents('form').hide();
+		$('#forgotbox').show();
+	});
+	$('.reg-btn').click(function(event) {
+		$(this).parents('form').hide();
+		$('#regbox').show();
 	});
 });
 if($('.content-home').size() == 1){

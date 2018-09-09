@@ -1,12 +1,9 @@
 <div class="header">
 	<div class="top">
 		<div class="container">
-			<a href="tel:86-010-57206579">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206579</a>
+			<a href="tel:86-010-57206579" class="color-white">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206579</a>
 			@guest
-				<!-- <a href="javascript:;" class="color-white user login-btn">LOGIN</a> -->
-				<a href="{{ route('login') }}" class="color-white user login-btn">LOGIN</a>
-	        {{-- <li><a href="{{ route('login') }}">Login</a></li>--}}
-	        {{-- <li><a href="{{ route('register') }}">Register</a></li>--}}
+				<a href="javascript:;" class="color-white user login-btn">{{ (Session::get('locale') == 'en') ? 'LOGIN:' : '登录' }}</a>
             @else
             	{{ Auth::user()->name }}
 
@@ -23,25 +20,6 @@
                             </form>
                         </li>
                     </ul>
-                {{--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-                </li>--}}
             @endguest
 			@if(Session::get('locale') == 'en')
 			<a href="{{ url('/changeLocale/zh') }}" class="color-white">CN</a>

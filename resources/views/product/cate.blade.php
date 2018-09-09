@@ -38,6 +38,7 @@
 			</dl>
 		</div>
 	@endforeach	
-	{{ $catetories->links() }}
+	<div class="brand-page">{{ $catetories->links() }}</div>
+	
 </div>
 @stop
