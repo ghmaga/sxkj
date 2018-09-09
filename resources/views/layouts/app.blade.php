@@ -47,7 +47,7 @@
 	<input type="email" class="text" placeholder="EMAIL" name="email" value="{{ old('email') }}" required>
 
 	<input type="password" class="text" placeholder="PASSWORD" name="password" required>
-	<!-- <input type="password" class="text" placeholder="CONFIRM_PASSWORD" name="password_confirmation" required> -->
+	<input type="password" class="text" placeholder="CONFIRM_PASSWORD" name="password_confirmation" required>
 
 	<input type="submit" value="JOIN" />
 </form>
