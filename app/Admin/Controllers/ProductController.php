@@ -100,7 +100,7 @@ class ProductController extends Controller
             // $form->checkbox($column[, $label])->options([1 => 'foo', 2 => 'bar', 'val' => 'Option name'])->stacked();
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->image('image', '特征图片')->rules('required|image');
+                $form->image('image', '特征图片');
                 $form->text('title', '特征名称')->rules('required');
                 $form->text('en_title', '英文特征名称');
                 $form->textarea('description', '特征描述');
