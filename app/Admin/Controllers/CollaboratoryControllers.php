@@ -95,7 +95,7 @@ class CollaboratoryControllers extends Controller
         return Admin::form(Collaboratory::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->image('image', '链接图片');
+            $form->image('image', '链接图片')->uniqueName();
             $form->url('link', '链接地址');
             $form->text('order', '排序');
 

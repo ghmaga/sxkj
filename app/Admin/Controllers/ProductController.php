@@ -94,13 +94,13 @@ class ProductController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '产品名称')->rules('required')->placeholder('请填写产品名称');
             $form->text('en_title', '英文产品名称');
-            $form->image('image', '封面图片');
+            $form->image('image', '封面图片')->uniqueName();
             $form->multipleSelect('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             // $form->checkbox('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             // $form->checkbox($column[, $label])->options([1 => 'foo', 2 => 'bar', 'val' => 'Option name'])->stacked();
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->image('image', '特征图片');
+                $form->image('image', '特征图片')->uniqueName();
                 $form->text('title', '特征名称')->rules('required');
                 $form->text('en_title', '英文特征名称');
                 $form->textarea('description', '特征描述');
@@ -122,7 +122,7 @@ class ProductController extends Controller
             $form->hasMany('video', '视频', function (Form\NestedForm $form) {
                 $form->text('filename', '视频名称')->rules('required');
                 $form->text('en_filename', '视频英文名称')->rules('required');
-                $form->image('image', '视频封面图')->help('请上传16:9图片');
+                $form->image('image', '视频封面图')->uniqueName()->help('请上传16:9图片');
                 $form->file('video', '视频上传');
             });
             $states = [

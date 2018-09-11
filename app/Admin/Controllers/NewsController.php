@@ -96,7 +96,7 @@ class NewsController extends Controller
             $form->text('title', '标题');
             $form->text('en_title', '英文标题');
             $form->select('cate_id', '产品分类')->options(Category::where(['parent_id' => 3])->pluck('name'));
-            $form->image('image', '封面图片');
+            $form->image('image', '封面图片')->uniqueName();
            
             $form->editor('body', '新闻内容');
             $form->editor('en_body', '英文新闻内容');
