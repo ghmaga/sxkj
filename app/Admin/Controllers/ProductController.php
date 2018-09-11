@@ -116,14 +116,14 @@ class ProductController extends Controller
                 $form->text('en_filename', '英文名称')->rules('required');
                 $form->text('catename', '分类名称')->rules('required');
                 $form->text('en_catename', '英文分类名称')->rules('required');
-                $form->file('file', '文件上传');
+                $form->file('file', '文件上传')->uniqueName();
             });
 
             $form->hasMany('video', '视频', function (Form\NestedForm $form) {
                 $form->text('filename', '视频名称')->rules('required');
                 $form->text('en_filename', '视频英文名称')->rules('required');
                 $form->image('image', '视频封面图')->uniqueName()->help('请上传16:9图片');
-                $form->file('video', '视频上传');
+                $form->file('video', '视频上传')->uniqueName();
             });
             $states = [
                 'on'  => ['value' => 1, 'text' => '打开', 'color' => 'success'],
