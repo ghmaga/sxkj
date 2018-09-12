@@ -16,7 +16,11 @@
 				<dd>
 					<ul class="product-item-point">
 						@foreach($products as $product)
-							<li>{{ $product['title'] }}</li>
+							@if(Session::get('locale') == 'en')
+								<li>{{ $product['en_title'] }}</li>
+							@else
+								<li>{{ $product['title'] }}</li>
+							@endif
 						@endforeach
 					</ul>
 				</dd>
