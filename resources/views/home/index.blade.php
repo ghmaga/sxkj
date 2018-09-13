@@ -36,7 +36,7 @@
 </div>
 <div class="home-news">
 	<div class="container">
-		<h2 class="title color-white">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</h2>
+		<h2 class="title"><a href="{{ route('news') }}" class="color-white">{{ (Session::get('locale') == 'en') ? 'NEWS' : '新闻' }}</a></h2>
 		<dl>
 			<dt><a href="{{ route('news.show', $news->id) }}"><img src="uploads/{{ $news->image }}" alt=""></a></dt>
 			<dd class="color-white">
