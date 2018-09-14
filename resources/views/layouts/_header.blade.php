@@ -3,7 +3,7 @@
 		<div class="container color-white">
 			<a href="tel:86-010-57206579" class="color-white">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206579</a>
 			@guest
-				<a href="javascript:;" class="color-white user login-btn">{{ (Session::get('locale') == 'en') ? 'LOGIN:' : '登录' }}</a>
+				<a href="javascript:;" class="color-white user login-btn">{{ (Session::get('locale') == 'en') ? 'LOGIN:'  '登录' }}</a>
             @else
             	{{ Auth::user()->name }}
                 <a href="javascript:;" onclick="document.getElementById('logout-form').submit();" class="color-white">Logout</a>
