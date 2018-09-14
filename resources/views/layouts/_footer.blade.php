@@ -15,9 +15,9 @@
 				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:service@sinsitech.com" class="color-white">E-mail: service@sinsitech.com</a><br><a href="tel:400-6876366" class="color-white">Service: 400-6876366</a></div>
 				<div class="share">
 					<a href="#"></a>
-					<a href="#"></a>
-					<a href="#"></a>
-					<a href="#"></a>
+					<a href="https://twitter.com/sinsitech" target="_blank"></a>
+					<!-- <a href="#"></a>
+					<a href="#"></a> -->
 				</div>
 				@else
 				<p>联系</p>

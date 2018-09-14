@@ -1,25 +1,13 @@
 <div class="header">
 	<div class="top">
-		<div class="container">
+		<div class="container color-white">
 			<a href="tel:86-010-57206579" class="color-white">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206579</a>
 			@guest
 				<a href="javascript:;" class="color-white user login-btn">{{ (Session::get('locale') == 'en') ? 'LOGIN:' : '登录' }}</a>
             @else
             	{{ Auth::user()->name }}
-
-            	<ul class="dropdown-menu">
-                        <li>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
+                <a href="javascript:;" onclick="document.getElementById('logout-form').submit();" class="color-white">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
             @endguest
 			@if(Session::get('locale') == 'en')
 			<a href="{{ url('/changeLocale/zh') }}" class="color-white">CN</a>
@@ -44,15 +32,15 @@
 								<input type="submit" value=" ">
 							</form>
 							<div class="prodroplist">
-								<a href="{{ route('product.cate', 2) }}">Drug Discovery</a>
-								<a href="{{ route('product.cate', 4) }}">Immunology</a>
-								<a href="{{ route('product.cate', 5) }}">GenomicsMolecular</a>
-								<a href="{{ route('product.cate', 1) }}">BiologyPrecision</a>
-								<a href="{{ route('product.cate', 8) }}">MedicineCommon</a>
-								<a href="{{ route('product.cate', 7) }}">InstrumentsZoopery</a>
-								<a href="{{ route('product.cate', 6) }}">InstrumensCell</a>
-								<a href="{{ route('product.cate', 3) }}">Biology</a>
-								<a href="{{ route('product.cate', -1) }}" class="viewall">View all Products</a>
+								<a href="{{ route('product.cate', 2) }}">{{ (Session::get('locale') == 'en') ? 'Drug Discovery' : '药物开发' }}</a>
+								<a href="{{ route('product.cate', 4) }}">{{ (Session::get('locale') == 'en') ? 'Immunology' : '免疫组学' }}</a>
+								<a href="{{ route('product.cate', 5) }}">{{ (Session::get('locale') == 'en') ? 'Genomics' : '基因组学' }}</a>
+								<a href="{{ route('product.cate', 1) }}">{{ (Session::get('locale') == 'en') ? 'Cell Biology' : '细胞生物学' }}</a>
+								<a href="{{ route('product.cate', 8) }}">{{ (Session::get('locale') == 'en') ? 'Precision Medicine' : '精准医学' }}</a>
+								<a href="{{ route('product.cate', 7) }}">{{ (Session::get('locale') == 'en') ? 'Zoopery Instrumens' : '实验动物' }}</a>
+								<a href="{{ route('product.cate', 6) }}">{{ (Session::get('locale') == 'en') ? 'Common Instruments' : '常规设备' }}</a>
+								<a href="{{ route('product.cate', 3) }}">{{ (Session::get('locale') == 'en') ? 'Molecular Biology' : '分子生物学' }}</a>
+								<a href="{{ route('product.cate', -1) }}" class="viewall">{{ (Session::get('locale') == 'en') ? 'View all Products' : '所有产品' }}</a>
 							</div>
 						</div>
 						<div class="prodrop-right">

@@ -3,12 +3,17 @@
 
 @section('content')
 <div class="container">
-	<h2 class="title">WORKING GROUP</h2>
+	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'WORKING GROUP' : '加入我们' }}</h2>
 	<div class="career">
-		<strong>Goals:</strong>
-		To organize and conduct experiment platform evaluation and selection and to organize research in soft and hardware system integration solutions as well as verification of key technology  <br>
-		and standard experiment; to export universal experiment platform sets and standard requirements and generate replicable innovative solutions; and to align with international <br>
-		experiment platforms.
+		@if(Session::get('locale') == 'en')
+			<strong>Goals:</strong>
+			To organize and conduct experiment platform evaluation and selection and to organize research in soft and hardware system integration solutions as well as verification of key technology  <br>
+			and standard experiment; to export universal experiment platform sets and standard requirements and generate replicable innovative solutions; and to align with international <br>
+			experiment platforms.
+		@else
+			<strong>愿景：</strong>
+			森西科技为包括我们的客户、商业伙伴，员工在内的所有人提供创造和实现他们美好梦想的机会。
+		@endif
 	</div>
 	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'POSITION' : '职位' }}</h2>
 	<ul class="jobs">
