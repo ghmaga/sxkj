@@ -180,7 +180,7 @@ input, textarea, button { border-radius:0; }
 	.tab a { width: 200px; text-align: center; float: left; color: #FFF; }
 	.tab a.hover { background-color: #FFF; color: #445C7B; }
 .about { width: 560px; font-size: 16px; margin: 84px 0 44px; padding-bottom: 77px; line-height: 30px; }
-	.about-box { position: absolute; z-index: -1; margin-top: 71px; width: calc((100vw - 1170px) / 2 + 1070px); height: 582px; background-color: #F2F2F2; }
+	.about-box { position: absolute; z-index: -1; margin-top: 71px; width: calc((100vw - 1170px) / 2 + 1070px); height: 628px; background-color: #F2F2F2; }
 	.about-blank { height: 67px; }
 .partner { margin: 35px -32px 0; padding-bottom: 50px; overflow: hidden; font-size: 0; }
 	.partner li { display: inline-block; height: 120px; vertical-align: top; margin: 0 32px 20px; }

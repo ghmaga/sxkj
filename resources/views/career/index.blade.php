@@ -11,7 +11,7 @@
 			and standard experiment; to export universal experiment platform sets and standard requirements and generate replicable innovative solutions; and to align with international <br>
 			experiment platforms.
 		@else
-			<strong>愿景：</strong>
+			<strong style="font-size: 18px;">愿景：</strong>
 			森西科技为包括我们的客户、商业伙伴，员工在内的所有人提供创造和实现他们美好梦想的机会。
 		@endif
 	</div>
