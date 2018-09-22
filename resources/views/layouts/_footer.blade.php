@@ -86,6 +86,13 @@ $(function(){
 		$(this).parents('form').hide();
 		$('#regbox').show();
 	});
+	$('.search').click(function(event) {
+		$(this).find('form').toggle();
+		$(this).toggleClass('searchover');
+	});
+	$('.search form input').click(function(event) {
+		event.stopPropagation();
+	});
 });
 if($('.content-home').size() == 1){
 	var contetTop = 747;

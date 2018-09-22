@@ -57,7 +57,11 @@ input, textarea, button { border-radius:0; }
 		.top a:nth-last-of-type(1) { margin-right: 0; }
 	.header > .container { padding: 21px 20px 0; }
 		.logo { float: left; margin: -6px 0 0; }
-		.search { display: none; float: right; margin-top: 3px; width: 42px; height: 42px; background: url(../image/search.png); background-size: cover; }
+		.search { position: relative; float: right; margin: 3px 0 0 36px; width: 42px; height: 42px; background: url(../image/search.png); background-size: 100% auto; cursor: pointer; }
+			.search form { background: #F8F7FF; position: absolute; right: 0; top: 76px; display: none; width: 282px; border: 1px solid #B5C6D6; }
+				.search form input[type=text] { width: 206px; padding: 13px 15px; line-height: 20px; background: none; border: none; float: left; }
+				.search form input[type=submit] { width: 46px; height: 46px; background: url(../image/searchbtn.png) no-repeat 50%; border: none; padding: 0; cursor: pointer; }
+			.searchover { background-position: 0 100%; }
 		.navigation { float: right; line-height: 42px; margin: 5px 0 0; font-size: 15px; font-weight: bold; }
 			.navigation > li { float: left; padding: 0 18px 32px; }
 				.navigation > li:hover .dropmenu { visibility: visible; }
@@ -123,8 +127,8 @@ input, textarea, button { border-radius:0; }
 	.special-box { overflow: hidden; }
 	.title { font-family: 'bangla_mnregular', 'PingFangSC-Regular', 'Microsoft YaHei Light', '微软雅黑', sans-serif; font-size: 30px; color: #142E4F; line-height: 42px; }
 		.color-white { color: #FFF; }
-.special-left { position: absolute; height: 811px; margin-top: 10px; box-sizing: border-box; width: calc((100vw - 1170px) / 2 + 1170px); border: 1px solid #E1E1E1; border-left: none; background: url(../image/special.png) no-repeat #FFF; }
-	.special-content { position: relative; margin-top: 54px; height: 767px; }
+.special-left { position: absolute; height: 905px; margin-top: 10px; box-sizing: border-box; width: calc((100vw - 1170px) / 2 + 1170px); border: 1px solid #E1E1E1; border-left: none; background: url(../image/special.png) no-repeat #FFF; }
+	.special-content { position: relative; margin-top: 54px; }
 		.special-content .word { max-width: 980px; font-size: 16px; line-height: 30px; font-family: Arial; }
 		.text-right { text-align: right; margin: 16px 0 11px; }
 			.more1 { display: inline-block; vertical-align: top; min-width: 160px; text-align: center; color: #888; border: 1px solid #BFBFBF; line-height: 52px; padding: 0 20px; transition: all 0.3s; }
@@ -180,7 +184,7 @@ input, textarea, button { border-radius:0; }
 	.tab a { width: 200px; text-align: center; float: left; color: #FFF; }
 	.tab a.hover { background-color: #FFF; color: #445C7B; }
 .about { width: 560px; font-size: 16px; margin: 84px 0 44px; padding-bottom: 77px; line-height: 30px; }
-	.about-box { position: absolute; z-index: -1; margin-top: 71px; width: calc((100vw - 1170px) / 2 + 1070px); height: 628px; background-color: #F2F2F2; }
+	.about-box { position: absolute; z-index: -1; margin-top: 71px; width: calc((100vw - 1170px) / 2 + 1070px); height: 800px; background-color: #F2F2F2; }
 	.about-blank { height: 67px; }
 .partner { margin: 35px -32px 0; padding-bottom: 50px; overflow: hidden; font-size: 0; }
 	.partner li { display: inline-block; height: 120px; vertical-align: top; margin: 0 32px 20px; }
@@ -192,8 +196,8 @@ input, textarea, button { border-radius:0; }
 		.more3 { float: right; margin: 153px 24px 0 0; transition: all 0.3s; border: 1px solid #34C081; color: #34C081; text-align: center; line-height: 30px; width: 100px; }
 			.more3:hover { background-color: #34C081; color: #FFF; }
 		.news-content { overflow: hidden; padding: 0 48px 0 36px; }
-			.news-content a { font-size: 24px; display: inline-block; vertical-align: top; max-width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
-			.news-description { height: 110px; overflow: hidden; margin: 10px 0 18px; }
+			.news-content a { font-size: 24px; line-height: 30px; display: inline-block; vertical-align: top; max-width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+			.news-description { height: 110px; overflow: hidden; margin: 10px 0; }
 			.news-time { display: inline-block; vertical-align: top; color: #445B7B; }
 			.news-time:after { transition: all 0.3s; display: block; content: ''; border-bottom: 2px solid #34C081; width: 70%; margin-top: 1px; }
 				.news-list li:hover .news-time:after { width: 100%; }
@@ -370,7 +374,7 @@ input, textarea, button { border-radius:0; }
 			.news-image img { width: 105px; height: auto; }
 			.more3 { position: absolute; right: 0; bottom: 10px; margin: 0; width: 50px; line-height: 15px; font-size: 8px; }
 			.news-content { padding: 0 0 0 10px; }
-				.news-content a { font-size: 12px; }
+				.news-content a { font-size: 12px; line-height: 18px; }
 				.news-description { font-size: 10px; line-height: 18px; height: auto; margin: 5px 0; }
 				.news-time { font-size: 10px; }
 				.news-time:after { border-bottom-width: 1px; }

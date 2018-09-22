@@ -19,7 +19,12 @@
 	<div class="container clear">
 		<h1 class="logo"><a href="{{route('home')}}"><img src="/image/logo.png" height="63" alt="森西科技"></a></h1>
 		<a href="javascript:;" class="menu-link"></a>
-		<a href="javascript:;" class="search"></a>
+		<div class="search">
+			<form action="{{ route('product') }}">
+				<input type="text" name="search" placeholder="Search Keyword">
+				<input type="submit" value=" ">
+			</form>
+		</div>
 		<ul class="navigation">
 			<li><a href="{{ route('home') }}" class="{{ active_class(if_uri_pattern('/'), 'current', '') }}">{{ (Session::get('locale') == 'en') ? 'HOME' : '主页' }}</a></li>
 			<li>
@@ -27,26 +32,15 @@
 				<div class="dropmenu">
 					<div class="container">
 						<div class="prodrop-left">
-							<form action="{{ route('product') }}" class="searchform">
-								<input type="text" name="search" placeholder="Find a Product" />
-								<input type="submit" value=" ">
-							</form>
 							<div class="prodroplist">
 								<a href="{{ route('product.cate', 1) }}">{{ (Session::get('locale') == 'en') ? 'Cell Biology' : '细胞生物学' }}</a>
-
 								<a href="{{ route('product.cate', 3) }}">{{ (Session::get('locale') == 'en') ? 'Molecular Biology' : '分子生物学' }}</a>
-
 								<a href="{{ route('product.cate', 4) }}">{{ (Session::get('locale') == 'en') ? 'Immunology' : '免疫组学' }}</a>
-
 								<a href="{{ route('product.cate', 5) }}">{{ (Session::get('locale') == 'en') ? 'Genomics' : '基因组学' }}</a>
-
 								<a href="{{ route('product.cate', 8) }}">{{ (Session::get('locale') == 'en') ? 'Precision Medicine' : '精准医学' }}</a>
-
 								<a href="{{ route('product.cate', 2) }}">{{ (Session::get('locale') == 'en') ? 'Drug Discovery' : '药物开发' }}</a>							
-								
 								<a href="{{ route('product.cate', 7) }}">{{ (Session::get('locale') == 'en') ? 'Zoopery Instrumens' : '实验动物' }}</a>
 								<a href="{{ route('product.cate', 6) }}">{{ (Session::get('locale') == 'en') ? 'Common Instruments' : '常规设备' }}</a>
-								
 								<a href="{{ route('product.cate', -1) }}" class="viewall">{{ (Session::get('locale') == 'en') ? 'View all Products' : '所有产品' }}</a>
 							</div>
 						</div>

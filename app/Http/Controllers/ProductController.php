@@ -50,13 +50,15 @@ class ProductController extends Controller
                         });
                 });
                 $products = $builder->orderBy('order', 'desc')->paginate(5);
+                return view('search.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
             } else {
                 $products = Product::where('recommend', 1)->orderBy('order', 'desc')->paginate(5);
+                return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
             }     
          // dd($products);
 
 
-    	return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
+    	// return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
     }
 
     public function show($id)
