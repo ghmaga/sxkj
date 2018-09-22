@@ -8,9 +8,9 @@
 	<ul class="news-list">
 		@foreach($products as $val)
 			<li>
-				<a href="{{ route('product.index', $val['id']) }}" class="more3">Consult</a>
+				<a href="{{ route('product.show', $val['id']) }}" class="more3">Consult</a>
 				<div class="news-content">
-					<a href="{{ route('product.index', $val['id']) }}">{{ (Session::get('locale') == 'en') ? $val['en_title'] : $val['title'] }}</a>
+					<a href="{{ route('product.show', $val['id']) }}">{{ (Session::get('locale') == 'en') ? $val['en_title'] : $val['title'] }}</a>
 					<div class="news-description">
 						@if(Session::get('locale') == 'en')
 							{!! $val['en_description'] !!}
