@@ -6,19 +6,19 @@
 	<style>.swiper-top { display: none; } .content { margin-top: 120px; } .news-content { padding-left: 0; }</style>
 	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'Search Result' : '搜索结果' }}</h2>
 	<ul class="news-list">
-		@foreach($news as $new)
+		@foreach($products as $val)
 			<li>
-				<a href="{{ route('news.show', $new['id']) }}" class="more3">Consult</a>
+				<a href="{{ route('product.index', $val['id']) }}" class="more3">Consult</a>
 				<div class="news-content">
-					<a href="{{ route('news.show', $new['id']) }}">{{ (Session::get('locale') == 'en') ? $new['en_title'] : $new['title'] }}</a>
+					<a href="{{ route('product.index', $val['id']) }}">{{ (Session::get('locale') == 'en') ? $val['en_title'] : $val['title'] }}</a>
 					<div class="news-description">
 						@if(Session::get('locale') == 'en')
-							{!! $new['en_description'] !!}
+							{!! $val['en_description'] !!}
 						@else
-							{!! $new['description'] !!}
+							{!! $val['description'] !!}
 						@endif
 					</div>
-					<div class="news-time">{{ date($new['created_at']) }}</div>
+					<div class="news-time">{{ date($val['created_at']) }}</div>
 				</div>
 			</li>
 		@endforeach
