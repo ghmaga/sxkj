@@ -28,6 +28,8 @@
 			</li>
 		@endforeach
 	</ul>
-	
+	<div class="brand-page">
+		{{ $news->links() }}
+	</div>
 </div>
 @stop

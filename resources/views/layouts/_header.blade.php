@@ -20,7 +20,7 @@
 		<h1 class="logo"><a href="{{route('home')}}"><img src="/image/logo.png" height="63" alt="森西科技"></a></h1>
 		<a href="javascript:;" class="menu-link"></a>
 		<div class="search">
-			<form action="{{ route('product') }}">
+			<form action="{{ route('search') }}">
 				<input type="text" name="search" placeholder="Search Keyword">
 				<input type="submit" value=" ">
 			</form>

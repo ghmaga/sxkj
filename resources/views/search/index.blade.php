@@ -6,7 +6,7 @@
 	<style>.swiper-top { display: none; } .content { margin-top: 120px; } .news-content { padding-left: 0; }</style>
 	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'Search Result' : '搜索结果' }}</h2>
 	<ul class="news-list">
-		@foreach($products as $val)
+		@foreach($searchlist as $val)
 			<li>
 				<a href="{{ route('product.show', $val['id']) }}" class="more3">Consult</a>
 				<div class="news-content">
@@ -23,6 +23,8 @@
 			</li>
 		@endforeach
 	</ul>
-	
+	<div class="brand-page">
+		{{ $searchlist->links() }}
+	</div>
 </div>
 @stop

@@ -28,37 +28,10 @@ class ProductController extends Controller
         $cate7 = Product::where('parent_id', 'like', '%7%')->orderBy('order', 'desc')->get();
         $cate8 = Product::where('parent_id', 'like', '%8%')->orderBy('order', 'desc')->get();
 
-        //搜索
+        $products = Product::where('recommend', 1)->orderBy('order', 'desc')->paginate(5);
+        // dd($products);
 
-            // 创建一个查询构造器
-            $builder = Product::query();
-            // 判断是否有提交 search 参数，如果有就赋值给 $search 变量
-            // search 参数用来模糊搜索商品
-            if ($search = $request->input('search', '')) {
-                $like = '%'.$search.'%';
-                // 模糊搜索商品标题、商品详情、SKU 标题、SKU描述
-                $builder->where(function ($query) use ($like) {
-                    $query->where('title', 'like', $like)
-                        ->orWhere('en_title', 'like', $like)
-                        ->orWhere('body', 'like', $like)
-                        ->orWhere('en_body', 'like', $like)
-                        ->orWhereHas('skus', function ($query) use ($like) {
-                            $query->where('title', 'like', $like)
-                                ->orWhere('en_title', 'like', $like)
-                                ->orWhere('description', 'like', $like)
-                                ->orWhere('en_description', 'like', $like);
-                        });
-                });
-                $products = $builder->orderBy('order', 'desc')->paginate(5);
-                return view('search.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
-            } else {
-                $products = Product::where('recommend', 1)->orderBy('order', 'desc')->paginate(5);
-                return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
-            }     
-         // dd($products);
-
-
-    	// return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
+        return view('product.index', compact('slides', 'products', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
     }
 
     public function show($id)
