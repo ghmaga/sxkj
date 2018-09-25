@@ -15,7 +15,7 @@ class NewsController extends Controller
         //获取新闻轮换图id=3
         $slides = Slide::where('parent_id', 3)->get();
         $brands = Brand::all();
-        $news = News::all();
+        $news = News::paginate(10);
 
         $cate1 = Product::where('parent_id', 'like', '%1%')->orderBy('order', 'desc')->get();
         $cate2 = Product::where('parent_id', 'like', '%2%')->orderBy('order', 'desc')->get();
