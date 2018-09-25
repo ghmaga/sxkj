@@ -46,27 +46,29 @@
 						</div>
 						<div class="prodrop-right">
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate1[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate1[0]->en_title }}
-											@else
-												{{ $cate1[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate1[0]->en_body !!}
-											@else
-												{!! $cate1[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate1[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate1[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate1[0]->en_title }}
+												@else
+													{{ $cate1[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate1[0]->en_body !!}
+												@else
+													{!! $cate1[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate1 as $val)
@@ -82,27 +84,29 @@
 							</div>								
 								
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate3[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate3[0]->en_title }}
-											@else
-												{{ $cate3[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate3[0]->en_body !!}
-											@else
-												{!! $cate3[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate3[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate3[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate3[0]->en_title }}
+												@else
+													{{ $cate3[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate3[0]->en_body !!}
+												@else
+													{!! $cate3[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate3 as $val)
@@ -118,27 +122,29 @@
 							</div>
 
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate4[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate4[0]->en_title }}
-											@else
-												{{ $cate4[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate4[0]->en_body !!}
-											@else
-												{!! $cate4[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate4[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate4[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate4[0]->en_title }}
+												@else
+													{{ $cate4[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate4[0]->en_body !!}
+												@else
+													{!! $cate4[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate4 as $val)
@@ -154,27 +160,29 @@
 							</div>
 
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate5[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate5[0]->en_title }}
-											@else
-												{{ $cate5[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate5[0]->en_body !!}
-											@else
-												{!! $cate5[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate5[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate5[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate5[0]->en_title }}
+												@else
+													{{ $cate5[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate5[0]->en_body !!}
+												@else
+													{!! $cate5[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate5 as $val)
@@ -190,27 +198,29 @@
 							</div>
 
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate8[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate8[0]->en_title }}
-											@else
-												{{ $cate8[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate8[0]->en_body !!}
-											@else
-												{!! $cate8[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate8[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate8[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate8[0]->en_title }}
+												@else
+													{{ $cate8[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate8[0]->en_body !!}
+												@else
+													{!! $cate8[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate8 as $val)
@@ -227,27 +237,29 @@
 
 
 							<div class="prodroplist-image">
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate2[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate2[0]->en_title }}
-											@else
-												{{ $cate2[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate2[0]->en_body !!}
-											@else
-												{!! $cate2[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate2[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate2[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate2[0]->en_title }}
+												@else
+													{{ $cate2[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate2[0]->en_body !!}
+												@else
+													{!! $cate2[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate2 as $val)
@@ -262,28 +274,30 @@
 								</div>
 							</div>
 
-							<div class="prodroplist-image">	
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate7[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate7[0]->en_title }}
-											@else
-												{{ $cate7[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate7[0]->en_body !!}
-											@else
-												{!! $cate7[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+							<div class="prodroplist-image">
+								<a href="{{ route('product.show', $cate7[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate7[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate7[0]->en_title }}
+												@else
+													{{ $cate7[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate7[0]->en_body !!}
+												@else
+													{!! $cate7[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate7 as $val)
@@ -299,27 +313,29 @@
 							</div>
 
 							<div class="prodroplist-image">	
-								<dl>
-									<dt>
-										<img src="/uploads/{{ $cate6[0]->image }}" alt="">
-										<p>
-											@if(Session::get('locale') == 'en')
-												{{ $cate6[0]->en_title }}
-											@else
-												{{ $cate6[0]->title }}
-											@endif
-										</p>
-									</dt>
-									<dd>
-										<ul class="product-item-point">
-											@if(Session::get('locale') == 'en')
-												{!! $cate6[0]->en_body !!}
-											@else
-												{!! $cate6[0]->body !!}
-											@endif
-										</ul>
-									</dd>
-								</dl>
+								<a href="{{ route('product.show', $cate6[0]['id']) }}">
+									<dl>
+										<dt>
+											<img src="/uploads/{{ $cate6[0]->image }}" alt="">
+											<p>
+												@if(Session::get('locale') == 'en')
+													{{ $cate6[0]->en_title }}
+												@else
+													{{ $cate6[0]->title }}
+												@endif
+											</p>
+										</dt>
+										<dd>
+											<ul class="product-item-point">
+												@if(Session::get('locale') == 'en')
+													{!! $cate6[0]->en_body !!}
+												@else
+													{!! $cate6[0]->body !!}
+												@endif
+											</ul>
+										</dd>
+									</dl>
+								</a>
 								<div class="recommend">
 									<strong>OTHER PRODUCTS:</strong>
 									@foreach($cate6 as $val)
