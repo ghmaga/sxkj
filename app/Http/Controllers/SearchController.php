@@ -48,7 +48,7 @@ class SearchController extends Controller
                             ->orWhere('en_description', 'like', $like);
                     });
             });
-            $searchlist = $builder->orderBy('order', 'desc')->paginate(2);
+            $searchlist = $builder->orderBy('order', 'desc')->paginate(10);
             
             return view('search.index', compact('slides', 'searchlist', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
     }
