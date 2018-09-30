@@ -94,13 +94,27 @@ class ProductController extends Controller
             $form->display('id', 'ID');
             $form->text('title', '产品名称')->rules('required')->placeholder('请填写产品名称');
             $form->text('en_title', '英文产品名称');
-            $form->image('image', '封面图片')->uniqueName();
+            $form->image('image', '封面图片')
+                ->fit(380, 300, function ($constraint) {
+                                //等比缩放
+                                $constraint->aspectRatio();
+                                //防止图片放大
+                                $constraint->upsize();
+                            })
+                ->uniqueName();
             $form->multipleSelect('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             // $form->checkbox('parent_id', '产品分类')->options(Category::where(['parent_id' => 2])->pluck('name'));
             // $form->checkbox($column[, $label])->options([1 => 'foo', 2 => 'bar', 'val' => 'Option name'])->stacked();
             $form->select('brand_id', '厂牌分类')->options(Category::where(['parent_id' => 13])->pluck('name'));
             $form->hasMany('skus', '产品特征', function (Form\NestedForm $form) {
-                $form->image('image', '特征图片')->uniqueName();
+                $form->image('image', '特征图片')
+                     ->fit(400, 320, function ($constraint) {
+                            //等比缩放
+                            $constraint->aspectRatio();
+                            //防止图片放大
+                            $constraint->upsize();
+                        })
+                     ->uniqueName();
                 $form->text('title', '特征名称')->rules('required');
                 $form->text('en_title', '英文特征名称');
                 $form->textarea('description', '特征描述');
