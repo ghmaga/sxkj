@@ -30,7 +30,7 @@ editor.customConfig.uploadImgHeaders = {
 }
 editor.customConfig.zIndex = 0;
 // 上传路径
-editor.customConfig.uploadImgServer = '/admin/upload';
+editor.customConfig.uploadImgServer = '/manage2018/upload';
 editor.customConfig.onchange = function (html) {
     $('input[name=$name]').val(html);
 }
