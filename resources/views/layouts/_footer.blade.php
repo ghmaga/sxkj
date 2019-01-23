@@ -3,16 +3,16 @@
 			<div class="footer-item float-left">
 				@if(Session::get('locale') == 'en')
 				<p>GET IN TOUCH <br><br>We want to hear from you.</p>
-				<a href="tel:86-010-57206579" class="contact color-white"><span>CONTACT US</span><strong>86-010-57206579</strong></a>
+				<a href="tel:86-010-57206578" class="contact color-white"><span>CONTACT US</span><strong>86-010-57206578</strong></a>
 				@else
 				<p>保持联系<br><br>我们希望听到您的声音</p>
-				<a href="tel:86-010-57206579" class="contact color-white"><span>联系我们</span><strong>86-010-57206579</strong></a>
+				<a href="tel:86-010-57206578" class="contact color-white"><span>联系我们</span><strong>86-010-57206578</strong></a>
 				@endif
 			</div>
 			<div class="footer-item float-right">
 				@if(Session::get('locale') == 'en')
 				<p>Address</p>
-				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:service@sinsitech.com" class="color-white">E-mail: service@sinsitech.com</a><br><a href="tel:400-6876366" class="color-white">Service: 400-6876366</a></div>
+				<div class="color-white">2/F, Zhonghuadizhi Building, <br>Heping Street, Chaoyang District, Beijing<br><a href="mailto:info@sinsitech.com" class="color-white">E-mail: info@sinsitech.com</a><br><a href="tel:400-6876366" class="color-white">Service: 400-6876366</a></div>
 				<div class="share">
 					<a href="#"></a>
 					<a href="https://twitter.com/sinsitech" target="_blank"></a>
@@ -23,7 +23,7 @@
 				<p>联系</p>
 				<div class="color-white clear">
 					地址：北京市朝阳区和平街13区中化地厦2层<br>
-					<a href="mailto:service@sinsitech.com" class="color-white">邮箱：service@sinsitech.com</a><br>
+					<a href="mailto:info@sinsitech.com" class="color-white">邮箱：info@sinsitech.com</a><br>
 					<a href="tel:400-6876366" class="color-white">客服：400-6876366</a><br>
 					<img src="/image/ewm.png" width="80" style="border: 3px solid #FFF; background: #FFF; float: right;" alt="">
 				</div>

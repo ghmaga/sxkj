@@ -75,7 +75,8 @@ class BrandController extends Controller
         return Admin::grid(Brand::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->image('图片')->image('', 50, 50);
+            $grid->image('图片')->image('', 100, 100);
+	    $grid->model()->orderBy('order', 'desc');
             $grid->created_at();
             $grid->updated_at();
         });

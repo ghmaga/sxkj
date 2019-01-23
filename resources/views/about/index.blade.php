@@ -26,7 +26,7 @@
 		TEL: 010-57206578, 010-57206576 <br>
 		Hotline: 400-687-6366 <br>
 		FAX: 010-84874116 <br>
-		<a href="mailto:service@sinsitech.com">E-mail: service@sinsitech.com</a>
+		<a href="mailto:info@sinsitech.com">E-mail: info@sinsitech.com</a>
 	</div>
 	<h2 class="title">{{ (Session::get('locale') == 'en') ? 'Collaboratory' : '合作实验室' }}</h2>
 	<ul class="partner">

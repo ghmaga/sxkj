@@ -18,7 +18,7 @@ class HomeController extends Controller
         $slides = Slide::where('parent_id', 5)->orderBy('order', 'desc')->get();
 
         $brands = Brand::orderBy('order', 'desc')->get();
-        // dd($slides);
+        //dd($slides);
         //获取新闻
         $news = News::orderBy('order', 'desc')->first();
 
