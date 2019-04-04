@@ -1,7 +1,7 @@
 <div class="header">
 	<div class="top">
 		<div class="container color-white">
-			<a href="tel:86-010-57206578" class="color-white">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}86-010-57206578</a>
+			<a href="tel:010-61666616-602" class="color-white">{{ (Session::get('locale') == 'en') ? 'TEL:' : '电话：' }}010-61666616-602</a>
 			@guest
 				<a href="javascript:;" class="color-white user login-btn">{{ (Session::get('locale') == 'en') ? 'LOGIN' : '登录' }}</a>
             @else

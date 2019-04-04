@@ -23,7 +23,7 @@
 		@endif
 		<br>
 		<br>
-		TEL: 010-57206578, 010-57206576 <br>
+		TEL: 010-61666616-602 <br>
 		Hotline: 400-687-6366 <br>
 		FAX: 010-84874116 <br>
 		<a href="mailto:info@sinsitech.com">E-mail: info@sinsitech.com</a>
