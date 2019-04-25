@@ -20,7 +20,9 @@ class HomeController extends Controller
         $brands = Brand::orderBy('order', 'desc')->get();
         //dd($slides);
         //获取新闻
-        $news = News::orderBy('order', 'desc')->first();
+        #$news = News::orderBy('order', 'desc')->first();
+        #$news = News::orderBy('created_at', 'desc')->first();
+        $news = News::orderBy('updated_at', 'desc')->first();
 
         $cate1 = Product::where('parent_id', 'like', '%1%')->orderBy('order', 'desc')->get();
         $cate2 = Product::where('parent_id', 'like', '%2%')->orderBy('order', 'desc')->get();
