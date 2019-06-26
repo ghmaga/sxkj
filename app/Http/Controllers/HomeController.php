@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slide;
 use App\Models\News;
 use App\Models\Brand;
+use App\Models\About;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,8 @@ class HomeController extends Controller
         #$news = News::orderBy('order', 'desc')->first();
         #$news = News::orderBy('created_at', 'desc')->first();
         $news = News::orderBy('updated_at', 'desc')->first();
+	//获取About
+	$about = About::first();
 
         $cate1 = Product::where('parent_id', 'like', '%1%')->orderBy('order', 'desc')->get();
         $cate2 = Product::where('parent_id', 'like', '%2%')->orderBy('order', 'desc')->get();
@@ -36,7 +39,7 @@ class HomeController extends Controller
         
 
         
-    	return view('home.index', compact('products', 'slides', 'news', 'brands', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
+    	return view('home.index', compact('products', 'slides', 'news', 'brands', 'about', 'cate1', 'cate2', 'cate3', 'cate4', 'cate5', 'cate6', 'cate7', 'cate8'));
     }
 
 
