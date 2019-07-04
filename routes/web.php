@@ -21,7 +21,7 @@ Route::get('brands/{id}', 'BrandsController@show')->name('brands.show');
 Route::get('about', 'AboutController@index')->name('about');
 Route::get('career', 'CareerController@index')->name('career');
 Route::get('news', 'NewsController@index')->name('news');
-Route::get('nwes/{id}', 'NewsController@show')->name('news.show');
+Route::get('news/{id}', 'NewsController@show')->name('news.show');
 
 //修改语言
 Route::get('/changeLocale/{locale}', 'HomeController@changeLocale');
